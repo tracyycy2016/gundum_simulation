@@ -388,12 +388,74 @@ class GameEngine:
             ps.hand = ps.deck[:5]
             ps.deck = ps.deck[5:]
 
+    # ── Board state snapshot ──
+
+    def _format_unit(self, unit) -> str:
+        pilot_str = f" + {unit.paired_pilot.card_name}" if unit.paired_pilot else ""
+        link_str  = " [LINK]" if unit.is_link_unit else ""
+        rest_str  = " ⟳" if unit.is_rested else ""
+        new_str   = " [NEW]" if unit.deployed_this_turn else ""
+        dmg_str   = f" dmg:{unit.damage}/{unit.effective_hp}" if unit.damage > 0 else f" hp:{unit.effective_hp}"
+        return f"{unit.template.card_name}{pilot_str} (AP:{unit.effective_ap}{dmg_str}){link_str}{rest_str}{new_str}"
+
+    def _format_base(self, ps) -> str:
+        if ps.base:
+            b = ps.base
+            return f"{b.template.card_name} HP:{b.current_hp}/{b.effective_hp}"
+        if not ps.ex_base_destroyed:
+            hp = 3 - ps._ex_base_damage
+            return f"EX Base HP:{hp}/3"
+        return "NONE"
+
+    def _log_board_state(self, turn_num: int, active: int):
+        """Log full board state for both players at the start of a turn (before draw)."""
+        self.log.set_context(turn_num, "BOARD_STATE")
+        standby = 3 - active
+
+        for pnum in [active, standby]:
+            ps = self.p[pnum]
+            role = "Active" if pnum == active else "Standby"
+
+            # ── Hand ──
+            hand_str = ", ".join(
+                f"{c.card_name} (Lv{c.lv} {c.card_type[0]})" for c in ps.hand
+            ) if ps.hand else "(empty)"
+            self.log.log(
+                f"[{role}] Hand ({len(ps.hand)}): {hand_str}",
+                pnum, "board_hand"
+            )
+
+            # ── Battle Area ──
+            if ps.battle_area:
+                units_str = " | ".join(self._format_unit(u) for u in ps.battle_area)
+            else:
+                units_str = "(empty)"
+            self.log.log(
+                f"[{role}] Battle ({len(ps.battle_area)}/6): {units_str}",
+                pnum, "board_battle"
+            )
+
+            # ── Shield / Base ──
+            shield_count = len(ps.shield_section)
+            base_str = self._format_base(ps)
+            res_count = ps.total_resource_count
+            active_res = ps.active_resource_count + (1 if ps.ex_resource_active else 0)
+            self.log.log(
+                f"[{role}] Shields: {shield_count} | Base: {base_str} | "
+                f"Resources: {active_res}/{res_count} active | "
+                f"Deck: {len(ps.deck)} | Hand: {len(ps.hand)} | Trash: {len(ps.trash)}",
+                pnum, "board_status"
+            )
+
     def _run_turn(self, active: int, turn_num: int) -> Optional[int]:
         """Run one player's full turn. Returns winning player or None."""
         self.log.set_context(turn_num, "START")
         standby = 3 - active
         ps = self.p[active]
         self.log.log(f"--- P{active}'s Turn {turn_num} ---", event_type="turn_start")
+
+        # ── Board snapshot (before any action this turn) ──
+        self._log_board_state(turn_num, active)
 
         # ── START PHASE ──
         # Active step: unrest all
@@ -407,7 +469,14 @@ class GameEngine:
             return standby
         drawn = ps.deck.pop(0)
         ps.hand.append(drawn)
-        self.log.log(f"P{active} draws '{drawn.card_name}'", active)
+        hand_after = ", ".join(
+            f"{c.card_name} (Lv{c.lv} {c.card_type[0]})" for c in ps.hand
+        )
+        self.log.log(
+            f"P{active} draws ★ '{drawn.card_name}' (Lv{drawn.lv} {drawn.card_type}) "
+            f"→ Hand now ({len(ps.hand)}): {hand_after}",
+            active, "draw"
+        )
 
         # ── RESOURCE PHASE ──
         self.log.set_context(turn_num, "RESOURCE")
