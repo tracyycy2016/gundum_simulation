@@ -698,11 +698,13 @@ with tab_results:
         # Filter log entries
         show_types = st.multiselect(
             "Filter log events",
-            ["system", "turn_start", "deploy", "pair", "attack", "damage",
+            ["system", "turn_start", "board_hand", "board_battle", "board_status",
+             "deploy", "pair", "attack", "damage",
              "destroy", "shield_destroy", "burst", "draw", "support",
              "defeat", "command", "block", "breach"],
-            default=["turn_start", "deploy", "pair", "attack", "damage",
-                     "destroy", "shield_destroy", "burst", "defeat", "breach"],
+            default=["turn_start", "board_hand", "board_battle", "board_status",
+                     "deploy", "pair", "attack", "damage",
+                     "destroy", "shield_destroy", "burst", "draw", "defeat", "breach"],
             key="log_filter"
         )
 
@@ -716,11 +718,18 @@ with tab_results:
                 log_text_lines.append(f"  TURN {e['turn']}")
                 log_text_lines.append(f"{'─'*60}")
                 prev_turn = e["turn"]
-            icon = {"defeat": "💀", "attack": "⚔️", "destroy": "💥", "shield_destroy": "🛡️",
-                    "deploy": "🤖", "pair": "👨‍✈️", "burst": "✨", "damage": "❤️",
-                    "draw": "🃏", "command": "⚡", "block": "🛡", "breach": "🔥",
-                    "turn_start": "🔄", "support": "💪"}.get(e["type"], "•")
-            log_text_lines.append(f"  {icon} [{e['phase']:15s}] {e['actor']}: {e['message']}")
+            icon = {
+                "defeat": "💀", "attack": "⚔️", "destroy": "💥", "shield_destroy": "🛡️",
+                "deploy": "🤖", "pair": "👨‍✈️", "burst": "✨", "damage": "❤️",
+                "draw": "🃏", "command": "⚡", "block": "🛡", "breach": "🔥",
+                "turn_start": "🔄", "support": "💪",
+                "board_hand":   "🖐️",
+                "board_battle": "⚔ ",
+                "board_status": "📋",
+            }.get(e["type"], "•")
+            # Indent board state lines for readability
+            indent = "    " if e["type"].startswith("board_") else "  "
+            log_text_lines.append(f"{indent}{icon} [{e['phase']:15s}] {e['actor']}: {e['message']}")
 
         st.code("\n".join(log_text_lines), language=None)
 
