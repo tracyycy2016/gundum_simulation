@@ -18,12 +18,12 @@ from collections import Counter, defaultdict
 import pandas as pd
 import streamlit as st
 
-from engine import GameEngine, validate_deck
+from engine import GameEngine, validate_deck, CardTemplate
 from cards import (
     get_all_cards, get_card_lookup, get_resource_cards,
     using_real_data, real_card_count, load_cards_from_csv,
     ALL_CARDS, CARD_LOOKUP, CARD_NAME_LOOKUP, RESOURCES,
-    PRESET_DECKS, CardTemplate
+    PRESET_DECKS
 )
 
 # ─────────────────────────────────────────────
