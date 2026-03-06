@@ -1,0 +1,414 @@
+card_number,card_name,card_type,colors,lv,cost,ap,hp,traits,effects,link_conditions,pilot_name,pilot_ap,pilot_hp,rarity,set_id,zone,effect_raw
+GD01-001,Gundam,Unit,blue,4,3,3,3,"Earth Federation,White Base Team","repair:1,breach:1",Amuro Ray,,0,0,,GD01,,All your White Base Team Units gain Repair 1
+GD01-002,Unicorn Gundam (Destroy Mode),Unit,blue,7,6,5,4,Civilian,,Banagher Links,,0,0,,GD01,,"When playing this card from your hand, you may destroy 1 of your Link Units with ""Unicorn Mode"" in its card name that is Lv.5. If you do, play this card as if it has 0 Lv. and cost. [Attack] Choose 1 enemy Unit. Rest it."
+GD01-003,Unicorn Gundam 02 Banshee (Destroy Mode),Unit,blue,6,4,5,4,Earth Federation,"breach:2,first_strike",Marida Cruz,,0,0,,GD01,,"[During Link] [Attack] Choose 12 cards from your trash. Return them to their owner's deck and shuffle it. If you do, set this Unit as acvtive. It gains <First Strike> during this turn."
+GD01-004,Guncannon | RX-77,Unit,blue,3,2,2,3,"Earth Federation,White Base Team",repair:1,White Base Team (Trait),,0,0,,GD01,,[When Paired] Choose 1 enemy Unit with 2 or less HP. Rest it.
+GD01-005,Unicorn Gundam (Unicorn Mode),Unit,blue,5,4,4,3,Civilian,,Banagher Links,,0,0,,GD01,,"[During Link] [Destroyed]Return this Unit's paired Pilot to its owner's hand. Then, discard 1"
+GD01-006,Delta Plus | MSN-001A1,Unit,blue,4,3,4,3,Earth Federation,repair:1,Earth Federation (Trait),,0,0,,GD01,,[During Link] This Unit gets HP+1
+GD01-007,Noin's Aries | OZ-07AMS,Unit,blue,3,3,2,3,OZ,,Lucrezia Noin,,0,0,,GD01,,"[Destroyed] If you have another (OZ) Unit in play, draw 1."
+GD01-008,Guntank | RX-75,Unit,blue,2,1,1,2,"Earth Federation,White Base Team","deploy,ping",,,0,0,,GD01,,[Deploy] Choose 1 rested enemy Unit. Deal 1 damage to it.
+GD01-009,G-Fighter,Unit,blue,3,2,3,2,"Earth Federation,White Base Team","high_maneuver,deploy",White Base Team (Trait),,0,0,,GD01,,[Deploy] Choose 1 of your (White Base Team) Units. It gains <High-Maneuver> during this turn.
+GD01-010,Unicorn Gundam 02 Banshee (Unicorn Mode),Unit,blue,4,3,4,3,Earth Federation,,Cyber-Newtype (Trait),,0,0,,GD01,,[When Paired] Choose 1 enemy Unit with 3 or less HP. Rest it.
+GD01-011,Loto | D-50C,Unit,blue,2,2,2,2,Earth Federation,,Earth Federation (Trait),,0,0,,GD01,,None
+GD01-012,Zech's Leo | OZ-06MS,Unit,blue,3,2,3,2,OZ,,OZ (Trait),,0,0,,GD01,,[When Paired] Choose 1 enemy Unit with 3 or less HP. Rest it.
+GD01-013,Gundam | RX-78-2,Unit,blue,4,2,3,4,"Earth Federation,White Base Team",,Amuro Ray,,0,0,,GD01,,None
+GD01-014,G-Sky Easy,Unit,blue,3,2,1,3,White Base Team,recover,White Base Team (Trait),,0,0,,GD01,,[During Link] [Activate Action] [Once per Turn] Choose 1 Unit. It recovers 1 HP.
+GD01-015,Ball | RB-79,Unit,blue,1,1,1,1,Earth Federation,recover,,,0,0,,GD01,,[Attack] Choose1 of your Units. It recovers 1 HP.
+GD01-016,Jegan | RGM-890,Unit,blue,3,2,2,3,Earth Federation,,,,0,0,,GD01,,"While you have 2 or more (Earth Federation) Units in play, this card in your hand gets -1 cost."
+GD01-017,Stark Jegan | RGM-89S,Unit,blue,3,3,3,3,Earth Federation,repair:1,Earth Federation (Trait),,0,0,,GD01,,None
+GD01-018,ReZEL | RGZ-95,Unit,blue,3,2,4,3,Earth Federation,,,,0,0,,GD01,,None
+GD01-019,Byarlant Custom | RX-160S,Unit,blue,4,2,3,4,Earth Federation,,,,0,0,,GD01,,"While 4 or more enemy Units are in play, this Unit gains <Blocker>."
+GD01-020,Anksha | RAS-96,Unit,blue,4,2,3,3,Earth Federation,"deploy,ping",,,0,0,,GD01,,[Deploy] Choose 1 rested enemy Unit. Deal 1 damage to it.
+GD01-021,Pisces | OZ-09MMS,Unit,blue,1,1,1,2,OZ,,,,0,0,,GD01,,None
+GD01-022,Cancer | OZ-08MMS,Unit,blue,2,2,2,3,OZ,,,,0,0,,GD01,,None
+GD01-023,Char's Gelgoog | MS-14S,Unit,green,4,4,4,3,Zeon,,Char Aznable,,0,0,,GD01,,"[Activate Main] Discard 1 (Zeon)/(Neo Zeon) Unit card : If a Pilot is not paired with this Unit, choose 1 (Newtype) Pilot that is Lv.3 or lower from your trash. Pair it with this Unit."
+GD01-024,Wing Gundam Zero,Unit,green,8,8,5,7,G Team,"high_maneuver,deploy",Heero Yuy,,0,0,,GD01,,[Deploy]Deal 3 damage to all Units that are Lv.5 or lower.
+GD01-025,Gundam Deathscythe | XXXG-01D,Unit,green,6,4,5,4,Operation Meteor,first_strike,Duo Maxwell,,0,0,,GD01,,[When Paired (Operation Meteor) Pilot] Place 1 rested Resource. Then this Unit gains <First Strike> during this turn.
+GD01-026,Char's Zaku II | MS-065,Unit,green,3,2,3,2,Zeon,,Char Aznable,,0,0,,GD01,,[During Pair][Destroyed] Deploy 1 rested [Char's Zaku II]((Zeon)Unit token.
+GD01-027,Big Zam | MA-08,Unit,green,7,5,5,6,Zeon,"breach:4,deploy",Dozle Zabi,,0,0,,GD01,,"[Deploy] If there are 10 or more (Zeon)/Neo Zeon) Unit cards in your trash, deal 4 damage to all Units with <Blocker>."
+GD01-028,Gundam Sandrock | XXXG-01SR,Unit,green,5,3,4,4,Operation Meteor,deploy,Quatre Raberba Winner,,0,0,,GD01,,[Deploy] You may deploy 1 (Maganac Corps) Unit card from your hand.
+GD01-029,Shenlong Gundam | XXG-015,Unit,green,5,4,4,4,Operation Meteor,breach:4,Change Wufei,,0,0,,GD01,,[Attack] Choose 1 enemy Unit with <Blocker> that is Lv.3 or lower. Destroy it.
+GD01-030,Rick Dom | MS-09R,Unit,green,3,2,3,3,Zeon,breach:2,,,0,0,,GD01,,None
+GD01-031,Gelgoog | MS-14,Unit,green,4,2,4,3,Zeon,,Zeon (Trait),,0,0,,GD01,,None
+GD01-032,Gyan | YMS-1S,Unit,green,4,3,4,3,Zeon,,M'Quve,,0,0,,GD01,,[When Paired (Zeon) Pilot] Choose 1 enemy Unit with <Blocker> that is Lv.2 or lower. Destroy it.
+GD01-033,Gundam Deathscythe | XXXG-01D,Unit,green,4,2,4,3,Operation Meteor,repair:1,Duo Maxwell,,0,0,,GD01,,None
+GD01-034,Gundam Heavyarms | XXXG-01H,Unit,green,4,2,3,4,Operation Meteor,,Trowa Barton,,0,0,,GD01,,[During Pair] This Unit gains <Breach 3>.
+GD01-035,Zaku II | MS-06,Unit,green,2,1,2,2,Zeon,,,,0,0,,GD01,,None
+GD01-036,Gouf | MS-078,Unit,green,2,2,3,2,Zeon,,,,0,0,,GD01,,None
+GD01-037,Gogg | MSM-03,Unit,green,2,2,2,3,Zeon,,,,0,0,,GD01,,None
+GD01-038,Adzam | MAX-03,Unit,green,5,4,2,5,Zeon,"deploy,ping",Zeon (Trait),,0,0,,GD01,,"[Deploy] If 5 or more enemy Units are in play, deal 1 damage to all enemy Units."
+GD01-039,Dopp,Unit,green,1,1,1,1,Zeon,deploy,,,0,0,,GD01,,[Deploy] Look at the top card of your deck. Return it to the top or bottom of your deck.
+GD01-040,Wing Gundam | XXXG-01W,Unit,green,5,2,4,3,Operation Meteor,,Heero Yuy,,0,0,,GD01,,None
+GD01-041,Shenlong Gundam | XXXG-01S,Unit,green,4,3,4,3,Operation Meteor,breach:3,Change Wufei,,0,0,,GD01,,None
+GD01-042,Duo's Leo | OZ-06MS,Unit,green,2,2,2,2,Operation Meteor,,Duo Maxwell,,0,0,,GD01,,This Unit may choose an active enemy Unit that is Lv. 2 or less as its attach target.
+GD01-043,Rasid's Maganac | WMS-03,Unit,green,3,2,2,3,Maganac Corps,deploy,Maganac Corps (Trait),,0,0,,GD01,,"[Deploy] Choose 1 of your green Units. During this turn, it may choose an active enemy Unit with 4 or less AP as its attack target."
+GD01-044,Kshatriya | NZ-666,Unit,red,5,4,5,4,Neo Zeon,ping,Marida Cruz,,0,0,,GD01,,[When Paired (Cyber-Newtype)/(Newtype) Pilot] Choose 1 to 2 enemy Units. Deal 1 damage to them.
+GD01-045,Duel Gundam (Assault Shroud) | GAT-X102,Unit,red,5,4,4,4,ZAFT,,Yzak Jule,,0,0,,GD01,,[When Paired] Look at the top 3 cards of your deck. You may deploy 1 (ZAFT) Unit card that is Lv.4 or lower among them. Return the remaining cards randomly to the bottom of your deck.
+GD01-046,Buster Gundam | GAT-X103,Unit,red,4,2,1,4,ZAFT,support:3,Dearka Elthman,,0,0,,GD01,,"[Activate Main] <Support 3> [During Pair (Coordinator) Pilot] When you use this Unit's <Support> to increase a (ZAFT) Unit's AP, set this Unit as active."
+GD01-047,Shamblo | AMA-X7,Unit,red,8,7,6,5,Zeon,ping,Newtype/Cyber-Newtype (Trait),,0,0,,GD01,,"[Attack] If 2 or more other rested fiendly Units are in play, choose 1 enemy Unit. Deal 3 damage to it."
+GD01-048,Zaku 1 Sniper Type | MS-05L,Unit,red,2,2,0,1,Zeon,"support:1,deploy_draw:1",Zeon (Trait),,0,0,,GD01,,"[Activate Main] <Support 1> [Deploy] Look at the top card of your deck. If it is a (Zeon)/(Neo Zeon) Unit card, you may reveal it and add it to your hand. Return any remaining card to the bottom of your deck."
+GD01-049,Blitz Gundam | GAT-X207,Unit,red,4,3,3,3,ZAFT,"first_strike,deploy",Nicol Amarfi,,0,0,,GD01,,[Deploy] Choose 1 of your (ZAFT) Units with 4 or more AP. It gains <First Strike> during this turn.
+GD01-050,LaGOWE | TMF-A-803,Unit,red,3,2,2,3,ZAFT,ping,ZAFT (Trait),,0,0,,GD01,,"[Attack] If this Unit has 5 or more AP and it is attacking an enemy Unit, choose 1 enemy Unit. Deal 2 damage to it."
+GD01-051,Kshatriya | NZ-666,Unit,red,4,2,3,4,Neo Zeon,,Cyber-Newtype (Trait),,0,0,,GD01,,None
+GD01-052,Geara Zulu (Guards Type) | AMS-129,Unit,red,4,3,2,4,Neo Zeon,"deploy,ping",,,0,0,,GD01,,Deploy 1 enemy Unit. Deal 1 damage to it.
+GD01-053,Geara Doga (Heavy Armed Type) | AMS-119,Unit,red,4,3,4,2,Neo Zeon,ping,,,0,0,,GD01,,[Activate Main] [Once per Turn] 1 : choose 1 enemy Unit with 2 or less AP. Deal 1 damage to it.
+GD01-054,Duel Gundam | GAT-X102,Unit,red,3,2,3,3,ZAFT,breach:3,ZAFT (Trait),,0,0,,GD01,,"[While this Unit has 5 or more AP, it gains <Breach 3>."
+GD01-055,BuCUE | TMF/A-802,Unit,red,3,2,2,3,ZAFT,support:2,ZAFT (Trait),,0,0,,GD01,,[Activate Main] <Support 2>
+GD01-056,Geara Doga (Sleeves) | AMS-119,Unit,red,3,2,2,3,Neo Zeon,ping,,,0,0,,GD01,,[Destroyed] Choose 1 enemy Unit with 5 or less AP. Deal 1 damage to it.
+GD01-057,Dreissen (Sleeves) | AMX-009,Unit,red,2,2,2,3,Neo Zeon,,,,0,0,,GD01,,None
+GD01-058,Galluss-K | AMX-101K,Unit,red,3,2,3,2,Zeon,,,,0,0,,GD01,,[Activate Action] [Once per Turn] 1 : Choose 1 Unit that is Lv.4 or higher. It gets AP+1 during this battle.
+GD01-059,Zee Zulu | AMS-129M,Unit,red,2,2,2,2,Neo Zeon,,,,0,0,,GD01,,"[Attack] If you are attacking the enemy player, this Unit gets AP+2 during this battle."
+GD01-060,Zaku Mariner | RMS-192M,Unit,red,2,1,2,2,Zeon,,,,0,0,,GD01,,None
+GD01-061,ZuOOT | TFA-2,Unit,red,1,1,0,2,ZAFT,support:1,,,0,0,,GD01,,[Activate Main] <Support 1>
+GD01-062,GOOhN | UMF-4R,Unit,red,1,1,1,2,ZAFT,,,,0,0,,GD01,,None
+GD01-063,ZnO | UMF-5,Unit,red,2,2,2,1,ZAFT,first_strike,ZAFT (Trait),,0,0,,GD01,,"During your turn, while this Unit is battling an enemy Unit that is Lv.2 or lower, it gains <First Strike>."
+GD01-064,DINN | AMF-101,Unit,red,2,2,3,2,ZAFT,,,,0,0,,GD01,,None
+GD01-065,Freedom Gundam | ZGMF-X10A,Unit,white,7,5,4,6,Triple Ship Alliance,blocker,Kira Yamato,,0,0,,GD01,,"[During Pair] [Once per Turn] When you pair a Pilot with this Unit or one of your white Units, choose 1 enemy Unit. It gets AP-2 during this turn."
+GD01-066,Justice Gundam | ZGMF-X09A,Unit,white,7,5,5,5,Triple Ship Alliance,deploy,Athrun Zala,,0,0,,GD01,,[Deploy] Deploy 1 [Fatum-00]((Triple Ship Alliance)-AP2-HP2-<Blocker>) Unit token. [During Pair] [Attack] Choose 1 of your (Triple Ship Alliance) Unit tokens. It may attack on the turn it is deployed.
+GD01-067,Gundam Aerial Rebuild | XVX-016RN,Unit,white,6,5,5,4,Academy,deploy_draw:1,Suletta Mercury,,0,0,,GD01,,[When Paired] Choose 1 Command card that is LV.5 or lower from your trash. Add it to your hand.
+GD01-068,Perfect Strike Gundam,Unit,white,5,3,4,4,Triple Ship Alliance,"blocker,deploy",Earth Alliance (Trait),,0,0,,GD01,,[Deploy] Choose 1 enemy Unit with 1 HP. Return it to its owner's hand.
+GD01-069,Strike Rouge | MBF-02,Unit,white,3,2,3,2,Triple Ship Alliance,,Orb (Trait),,0,0,,GD01,,[Activate Main] [Once per Turn] 1 : Choose 1 of your rested white Units with <Blocker>. Set it as active. It can't attack during this turn.
+GD01-070,Gundam Aerial | XVX-016,Unit,white,5,3,3,3,Academy,,Suletta Mercury,,0,0,,GD01,,"While there are 4 or more Command cards in your trash, this card in your hand gets cost -2."
+GD01-071,Gundam Pharact | FP/A-77,Unit,white,4,3,3,4,Academy,,Academy (Trait),,0,0,,GD01,,[During Link] [Attack] Choose 1 enemy Unit. It gets AP-2 during this battle.
+GD01-072,Launcher Strike Gundam,Unit,white,4,3,3,4,Earth Alliance,blocker,Earth Alliance (Trait),,0,0,,GD01,,None
+GD01-073,Sword Strike Gundam,Unit,white,4,3,4,3,Earth Alliance,,Earth Alliance (Trait),,0,0,,GD01,,[During Link] [Attack] Choose 1 enemy Unit with 2 or less HP. Return it to its owner's hand.
+GD01-074,Chuchu's Demi Trainer | MSJ-105CC,Unit,white,2,2,3,1,Academy,deploy_draw:1,Chuatury Panlunch,,0,0,,GD01,,"[Attack] Draw 1. Then, discard 1."
+GD01-075,Darilbalde | MD-0064,Unit,white,3,2,4,2,Academy,deploy,Academy (Trait),,0,0,,GD01,,[Deploy] Choose 1 enemy Unit with 1 HP. Return it to its owner's hand.
+GD01-076,Michaelis | CFK-029,Unit,white,3,2,3,3,Academy,,Academy (Trait),,0,0,,GD01,,"When there are 4 or more Command Cards in your trash, this Unit gets AP+1 and HP+1"
+GD01-077,Strike Gundam | GAT-X105,Unit,white,4,2,3,4,Earth Alliance,,Kira Yamato,,0,0,,GD01,,None
+GD01-078,Mistral | MAW-01,Unit,white,1,1,1,1,Earth Alliance,deploy,,,0,0,,GD01,,[Deploy] Choose 1 enemy Unit. It gets AP-1 during this turn.
+GD01-079,Skygrasper | FX-550,Unit,white,2,2,2,2,Earth Alliance,,Earth Alliance (Trait),,0,0,,GD01,,None
+GD01-080,Cagalli's Skygrasper | FX-550,Unit,white,2,2,2,1,Earth Alliance,,Cagalli Yula Athha,,0,0,,GD01,,[Destroyed] Choose 1 enemy Unit that is Lv.2 or lower. Return it to its owner's hand.
+GD01-081,M1 Astray | MBF-M1,Unit,white,2,2,2,2,Triple Ship Alliance,blocker,,,0,0,,GD01,,"While you have another (Triple Ship Alliance) Unit in play, this Unit gets AP+1 and <Blocker>"
+GD01-082,Gundam Aerial (Mirasoul Flight Unit) | XVX-016,Unit,white,4,3,4,3,Academy,,Suletta Mercury,,0,0,,GD01,,"[During Pair] [Activate Action] [Once per Turn] 2 Choose 1 enemy Unit, it gets AP-1 during this battle."
+GD01-083,Guel's Dilanza | MO-0032G,Unit,white,2,2,2,2,Academy,,Academy (Trait),,0,0,,GD01,,None
+GD01-084,Beguir-Pente | CEK-077,Unit,white,2,2,2,3,Academy,,,,0,0,,GD01,,None
+GD01-085,Demi Garrison | MSJ-OP122,Unit,white,2,1,2,2,Academy,,,,0,0,,GD01,,None
+GD01-086,Gundam Lfrith | XGF-02,Unit,white,3,2,2,4,Vanadis Institute,blocker,,,0,0,,GD01,,None
+GD01-087,Sayla Mass,Pilot,blue,3,1,0,0,"Earth Federation,White Base Team,Newtype",repair:1,,Sayla Mass,1,1,,GD01,,"While this Unit is blue, it gains <Repair 1>"
+GD01-088,Banagher Links,Pilot,blue,5,1,0,0,"Civilian,Newtype",deploy_draw:1,,Banagher Links,2,2,,GD01,,[When Linked] Draw 1.
+GD01-089,Riddhe Marcenas,Pilot,blue,3,1,0,0,Earth Federation,,,Riddhe Marcenas,1,1,,GD01,,"If this Unit has <Repair>, it gets AP+1"
+GD01-090,Duo Maxwell,Pilot,green,4,1,0,0,Operation Meteor,,,Duo Maxwell,1,2,,GD01,,[During Link] This Unit's AP can't be reduced by enemy effects.
+GD01-091,Change Wufei,Pilot,green,4,1,0,0,Operation Meteor,,,Change Wufei,2,1,,GD01,,"During your turn, if this Unit has <Breach>, it can't receive battle damage from enemy Units with 3 or less AP."
+GD01-092,M'Quve,Pilot,green,3,1,0,0,Zeon,breach:1,,M'Quve,1,1,,GD01,,"White this Unit is (Zeon), it gains <Breach 1>"
+GD01-093,Marida Cruz,Pilot,red,4,1,0,0,"Neo Zeon,Cyber-Newtype",ping,,Marida Cruz,2,1,,GD01,,[During Link] [Attack] Choose 1 enemy Unit whose Lv. is equal to or lower than this Unit. Deal 1 damage to it.
+GD01-094,Yzak Jule,Pilot,red,3,1,0,0,"ZAFT,Coordinator",deploy_draw:1,,Yzak Jule,1,1,,GD01,,"[Once per Turn] When an enemy Link Unit is destroyed with damage while this Unit is attacking, draw 1."
+GD01-095,Dearka Elthman,Pilot,red,3,1,0,0,"ZAFT,Coordinator",deploy_draw:1,,Dearka Elthman,1,1,,GD01,,"[When Linked] Discard 1. If you do, draw 1."
+GD01-096,Cagalli Yula Athha,Pilot,white,4,1,0,0,Orb,blocker,,Cagalli Yula Athha,1,1,,GD01,,"While this Unit is white, it gains <Blocker>"
+GD01-097,Guel Jeturk,Pilot,white,3,1,0,0,Academy,,,Guel Jeturk,1,1,,GD01,,"[Activate Main] [Once per Turn] If your opponent has 8 or more cards in their hand, set this Unit as active. It can't attack during this turn."
+GD01-098,Elan Ceres (Enhanced Person Number 4),Pilot,white,4,1,0,0,Academy,recover,,Elan Ceres (Enhanced Person Number 4),2,1,,GD01,,"[Activate Action] [Once per Turn] If an enemy Unit with 1 or less AP is in play, this Unit recovers 1 HP."
+GD01-099,Intercept Orders,Command,blue,4,2,0,0,,"deploy,timing:both",,,0,0,,GD01,,[Main] / [Action] Choose 1 to 2 enemy Units with 3 or less HP. Rest them.
+GD01-100,A Show of Resolve,Command,blue,4,3,0,0,,"deploy_draw:1,timing:main",,,0,0,,GD01,,[Main] Draw 2.
+GD01-101,Deep Devotion | Lucrezia Noin,Command,blue,2,1,1,0,OZ,"recover,timing:both",,Lucrezia Noin,0,0,,GD01,,[Main] / [Action] Choose 1 friendly Link Unit. It recovers 3 HP.
+GD01-102,Securing the Supply Line,Command,blue,4,2,0,0,,"recover,timing:main",,,0,0,,GD01,,[Main] All friendly Units that art Lv.4 or lower recover 2 HP.
+GD01-103,The Stubborn Cog | Daguza Mackle,Command,blue,1,1,0,1,Earth Federation,timing:main,,Daguza Mackle,0,0,,GD01,,[Main] Choose 1 active friendly (Earth Federation) Unit and 1 active enemy Unit. Rest them.
+GD01-104,Signs of a Revolution,Command,blue,3,2,0,0,,"ping,timing:main",,,0,0,,GD01,,[Main] Choose 1 rested enemy Unit. Deal 2 damage to it.
+GD01-105,"Citizens, Take a Stand!",Command,green,4,1,0,0,,timing:main,,,0,0,,GD01,,[Main] All your Units get AP+2 during this turn.
+GD01-106,Fortress Defense | Dozle Zabi,Command,green,5,2,1,0,Zeon,timing:main,,Dozle Zabi,0,0,,GD01,,[Main] Deploy 2 [Zaku II]((Zeon) AP1 HP1) Unit tokens.
+GD01-107,First Contact,Command,green,3,3,0,0,,timing:main,,,0,0,,GD01,,[Main] Place 1 rested Resource.
+GD01-108,Strategic Arms,Command,green,6,6,0,0,,"ping,timing:main",,,0,0,,GD01,,[Main] Deal 2 damage to all Units with <Blocker>
+GD01-109,The Path to Victory or Defeat,Command,green,5,1,0,0,,"deploy_draw:1,timing:main",,,0,0,,GD01,,[Main] Look at the top 5 cards of your deck. You may reveal 1 (Operation Meteor)/(G Team) Unit card/Pilot card among them and add it to your hand. Return the remaining cards randomly to the bottom of your deck.
+GD01-110,Rasid's Orders | Rasid Kurama,Command,green,3,1,0,1,Maganac Corps,timing:both,,Rasid Kurama,0,0,,GD01,,"[Main] / [Action] Choose 1 Unit that is Lv.4 or higher. During this turn, it may choose an activate enemy Unit with 6 or less AP as its attack target."
+GD01-111,Battle of Aces,Command,red,3,2,0,0,,"ping,timing:both",,,0,0,,GD01,,[Main] / [Action] Choose 1 damaged enemy Unit. Deal 3 damage to it. Burst: Choose 1 enemy Unit. Deal 2 damage to it.
+GD01-112,Extreme Hatred | Loni Garvey,Command,red,6,1,1,0,"Zeon,Newtype","ping,timing:main",,Loni Garvey,0,0,,GD01,,"[Main] Choose 2 of your active Units. Rest them. If you do, choose 1 enemy Unit. Deal 3 damage to it."
+GD01-113,The Desert Tiger | Andrew Waldfeld,Command,red,3,1,1,0,"ZAFT,Coordinator",timing:both,,Andrew Waldfeld,0,0,,GD01,,[Main] / [Action] Choose 1 friendly (ZAFT) Unit. It gets AP+3 during this turn.
+GD01-114,Assault on Torrington Base | Yonem Kirks,Command,red,1,1,1,0,Zeon,timing:action,,Yonem Kirks,0,0,,GD01,,[Action] Choose 2 friendly Units. They get AP+1 during this turn.
+GD01-115,Zeon Remnant Forces,Command,red,2,1,0,0,,"ping,timing:both",,,0,0,,GD01,,[Main] / [Action] Choose 1 enemy Unit. Deal 1 damage to it.
+GD01-116,Stealth Stratagem | Nicol Amarfi,Command,red,2,1,0,1,"ZAFT,Coordinator","ping,timing:both",,Nicol Amarfi,0,0,,GD01,,[Main]/[Action] Choose 1 enemy Unit with 2 or less AP. Deal 2 damage to it.
+GD01-117,The Witch and the Bride,Command,white,5,2,0,0,,timing:both,,,0,0,,GD01,,[Main] / [Action] Choose 1 enemy Unit with 5 or less HP. Return it to its owner's hand. Burst: Activate this card's [Main].
+GD01-118,Overflowing Affection,Command,white,2,1,0,0,,"deploy_draw:1,timing:main",,,0,0,,GD01,,"[Main] Draw 2. Then, discard 1."
+GD01-119,Iron-Fisted Discipline | Chuatury Panlunch,Command,white,2,1,1,0,Academy,timing:both,,Chuatury Panlunch,0,0,,GD01,,[Main] / [Action] Choose 1 enemy Unit that is Lv.4 or lower. It gets AP-2 during this turn.
+GD01-120,Naval Bombardment,Command,white,2,1,0,0,,timing:action,,,0,0,,GD01,,[Action] Choose 1 friendly Unit with <Blocker>. It gets AP+3 during this turn. Burst: Choose 1 enemy Unit. It gets AP-3 during this turn.
+GD01-121,Midair Modifications,Command,white,3,2,0,0,,timing:main,,,0,0,,GD01,,[Main] Choose 1 rested Unit with <Blocker>. Set it as active. It can't attack during this turn.
+GD01-122,Covert Operative | Shaddiq Zenelli,Command,white,3,1,1,0,Academy,timing:main,,Shaddiq Zenelli,0,0,,GD01,,"[Main] Choose 1 enemy Unit with 2 or less HP. Return it to its owner's hand. If you have a Link Unit in play, choose 1 enemy Unit 4 or less HP instead."
+GD01-123,Nahel Argama,Base,blue,3,2,0,5,"Earth Federation,Warship",,,,0,0,,GD01,,"Then, choose 1 enemy Unit with 3 or less HP. Rest it."
+GD01-124,Side 7,Base,blue,1,1,0,4,"Earth Federation,Stronghold",recover,,,0,0,,GD01,,[Activate Main] Rest this Base: Choose 1 friendly Unit. It recovers 1 HP.
+GD01-125,Zanzibar,Base,green,4,2,0,5,"Zeon,Warship",,,,0,0,,GD01,,"Then, if it is your turn, you may deploy 1 (Zeon) Unit card that is Lv.4 or lower from your hand."
+GD01-126,Underground Desert Base,Base,green,2,1,0,6,"Maganac Corps,Stronghold",,,,0,0,,GD01,,None
+GD01-127,Gamow,Base,red,2,1,0,5,"ZAFT,Warship",breach:3,,,0,0,,GD01,,[Activate Action] Rest this Base : Choose 1 friendly (ZAFT) Unit with 5 or more AP. It gains <Breach 3> during this battle.
+GD01-128,Mining Asteroid Palau,Base,red,2,1,0,6,"Neo Zeon,Stronghold",,,,0,0,,GD01,,None
+GD01-129,Kusanagi,Base,white,4,2,0,4,"Triple Ship Alliance,Warship",,,,0,0,,GD01,,"Then, choose 1 enemy Unit with 3 or less HP. Return it to its owner's hand."
+GD01-130,13th Tactical Testing Sector,Base,white,3,1,0,5,"Academy,Stronghold",,,,0,0,,GD01,,"[Activate Main] Rest this Base: If a friendly (Academy) Unit is in play, choose 1 enemy Unit. It gets AP-1 during this turn."
+GD02-001,Psycho Gundam,Unit,blue,6,4,4,5,Titans,"breach:3,recover",Four Murasame,,0,0,,GD02,,"[During Pair･(Cyber-Newtype) Pilot]When one of your (Titans) Units destroys an enemy shield area card with damage, this Unit recovers 2 HP"
+GD02-002,Gundam Epyon,Unit,blue,8,7,6,6,White Fang,deploy_draw:1,Zechs Merquise,,0,0,,GD02,,"[During Link][Once per Turn]During your turn, when one of your Units destroys an enemy Unit with battle damage, set this Unit as active."
+GD02-003,Gundam Mk-II (Titans),Unit,blue,4,3,4,2,Titans,,Titans (Trait),,0,0,,GD02,,"[During Pair･Lv.3 or Lower Pilot][Destroyed]You may discard 1 Unit card. If you do, return the card paired with this Unit to your hand."
+GD02-004,Byarlant,Unit,blue,5,3,4,3,Titans,,Jerid Messa,,0,0,,GD02,,[When Paired]Choose 1 rested enemy Unit with 3 or less HP. It won't be set as active during the start phase of your opponent's next turn.
+GD02-005,Tallgeese,Unit,blue,4,3,3,4,OZ,,OZ (Trait),,0,0,,GD02,,[During Link][Attack]Choose 1 enemy Unit with 2 or less HP. Rest it.
+GD02-006,Forbidden Gundam,Unit,blue,5,3,4,4,Earth Alliance,blocker,Biological CPU (Trait),,0,0,,GD02,,"During your turn, this Unit can't receive battle damage from enemy Units that are Lv.2 or lower."
+GD02-007,Psycho Gundam (MA Mode),Unit,blue,5,4,3,4,Titans,repair:2,Cyber-Newtype (Trait),,0,0,,GD02,,None
+GD02-008,Gabthley,Unit,blue,4,3,4,3,Titans,ping,Titans (Trait),,0,0,,GD02,,[When Linked]Choose 1 rested enemy Unit. Deal 1 damage to it.
+GD02-009,Calamity Gundam,Unit,blue,5,3,3,5,Earth Alliance,ping,Biological CPU (Trait),,0,0,,GD02,,"[Once per Turn]When this Unit's AP is reduced by an enemy effect, choose 1 rested enemy Unit. Deal 2 damage to it."
+GD02-010,Raider Gundam,Unit,blue,5,3,4,4,Earth Alliance,deploy_draw:1,Biological CPU (Trait),,0,0,,GD02,,"[Once per Turn]When this Unit receives enemy effect damage, draw 1."
+GD02-011,Moebius (Peacemaker Team),Unit,blue,4,2,0,1,Earth Alliance,ping,,,0,0,,GD02,,[Activate･Action]Destroy this Unit：Choose 1 enemy Base/enemy Shield this Unit is battling. Deal 6 damage to it.
+GD02-012,Core Booster,Unit,blue,2,2,2,2,"Earth Federation,White Base Team",,White Base Team (Trait),,0,0,,GD02,,None
+GD02-013,Hizack,Unit,blue,2,1,2,2,Titans,,,,0,0,,GD02,,None
+GD02-014,Galbaldy Beta,Unit,blue,2,2,3,1,Titans,deploy,,,0,0,,GD02,,[Deploy]Choose 1 of your (Titans) Units. It gets AP+1 during this turn.
+GD02-015,Marasai,Unit,blue,3,2,3,3,Titans,,Titans (Trait),,0,0,,GD02,,None
+GD02-016,Barzam,Unit,blue,3,2,3,2,Titans,deploy,,,0,0,,GD02,,[Deploy]Choose 1 of your (Titans) Units. It gets AP+1 during this turn.
+GD02-017,Delta Plus (Waverider Mode),Unit,blue,3,2,2,3,Earth Federation,repair:2,Riddhe Marcenas,,0,0,,GD02,,None
+GD02-018,Taurus,Unit,blue,2,2,3,3,OZ,,,,0,0,,GD02,,This Unit can't choose the enemy player as its attack target.
+GD02-019,Raider Gundam (MA Mode),Unit,blue,4,2,4,3,Earth Alliance,,,,0,0,,GD02,,None
+GD02-020,Elmeth,Unit,green,6,5,4,4,Zeon,deploy_draw:1,Lalah Sune,,0,0,,GD02,,[Deploy]Look at the top 5 cards of your deck. You may reveal 1 green (Zeon) Pilot card among them and add it to your hand. Return the remaining cards randomly to the bottom of your deck. [During Link] This Unit gets AP+2.
+GD02-021,Gundam AGE-1 Normal,Unit,green,3,2,2,2,"Earth Federation,AGE System",deploy_draw:1,Asuno Family (Trait),,0,0,,GD02,,"[Deploy]You may discard 1 green (Earth Federation) Unit card. If you do, place 1 EX Resource. Then, if you are Lv.7 or higher, draw 1."
+GD02-022,G-Exes,Unit,green,3,2,2,3,Earth Federation,,Woolf Enneacle,,0,0,,GD02,,"[Once per Turn]When you place an EX Resource, choose 1 of your (AGE System) Units. It gains <Breach 2> during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)"
+GD02-023,Gundam AGE-1 Spallow,Unit,green,4,3,3,4,"Earth Federation,AGE System",first_strike,Flit Asuno,,0,0,,GD02,,"[During Link]While you are Lv.7 or higher, this Unit gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)"
+GD02-024,Red Gundam,Unit,green,5,3,4,4,Clan,high_maneuver,Clan (Trait),,0,0,,GD02,,[During Link]This Unit gains <High-Maneuver>. (This Unit can't be blocked.)
+GD02-025,Gundam Heavyarms,Unit,green,4,3,3,4,Operation Meteor,deploy,Operation Meteor (Trait),,0,0,,GD02,,[Deploy]Look at the top card of your deck. Return it to the top or bottom of your deck.
+GD02-026,Genoace Custom,Unit,green,2,2,2,2,Earth Federation,deploy,Woolf Enneacle,,0,0,,GD02,,"[Deploy]If you are Lv.7 or higher, choose 1 of your (AGE System) Units. It gets AP+2 during this turn."
+GD02-027,Gundam AGE-1 Titus,Unit,green,7,4,5,5,"Earth Federation,AGE System",breach:3,Flit Asuno,,0,0,,GD02,,None
+GD02-028,Abdul's Maganac,Unit,green,3,2,3,3,Maganac Corps,,Maganac Corps (Trait),,0,0,,GD02,,None
+GD02-029,Gundam AGE-1 Normal,Unit,green,3,2,3,3,"Earth Federation,AGE System",,Asuno Family (Trait),,0,0,,GD02,,None
+GD02-030,Genoace,Unit,green,1,1,1,2,Earth Federation,,,,0,0,,GD02,,None
+GD02-031,Gundam AGE-1 Titus,Unit,green,4,2,2,4,"Earth Federation,AGE System",,Flit Asuno,,0,0,,GD02,,"While you are Lv.7 or higher, this Unit gets AP+2."
+GD02-032,White Gundam,Unit,green,3,2,3,3,Zeon,,Char Aznable,,0,0,,GD02,,None
+GD02-033,Kikeroga (MA Mode) (GQ),Unit,green,5,4,3,4,Zeon,breach:5,Challia Bull,,0,0,,GD02,,"While another friendly (Zeon) Link Unit is in play, this Unit gains <Breach 5>"
+GD02-034,GQuuuuuuX,Unit,green,2,1,0,3,Zeon,,,,0,0,,GD02,,[During Pair･Red Pilot]This Unit gets AP+2.
+GD02-035,Police Zaku (Armored RRU Type),Unit,green,2,1,2,3,Side 6,,,,0,0,,GD02,,This Unit can't choose the enemy player as its attack target.
+GD02-036,Qubeley,Unit,red,7,5,5,5,Neo Zeon,ping,Haman Karn,,0,0,,GD02,,[When Linked]This Unit gains <Suppression> during this turn. (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.) [During Pair･(Neo Zeon) Pilot][Attack]Choose 1 damaged enemy Unit. Deal 2 damage to it.
+GD02-037,Gundam Virsago,Unit,red,5,4,4,4,New UNE,"breach:1,deploy,ping",Shagia Frost,,0,0,,GD02,,"[Deploy]If there are 3 or less enemy Shields, choose 1 enemy Unit with 5 or less AP. Deal 2 damage to it."
+GD02-038,GQuuuuuuX (Omega Psycommu),Unit,red,7,5,5,4,Clan,deploy,Amate Yuzuriha (Machu),,0,0,,GD02,,[Deploy]Look at the top 3 cards of your deck. You may deploy 1 (Clan) Unit card that is Lv.4 or lower among them. Return the remaining cards randomly to the bottom of your deck.
+GD02-039,Haman Karn's Gaza C,Unit,red,3,2,2,3,Neo Zeon,ping,Haman Karn,,0,0,,GD02,,[When Paired]Choose 1 enemy Unit that is Lv.3 or lower. Deal 1 damage to it.
+GD02-040,Gundam Ashtaron,Unit,red,4,3,3,3,New UNE,"support:2,deploy",New UNE (Trait),,0,0,,GD02,,[Deploy]Choose 1 of your other (New UNE) Units. It can't receive battle damage from enemy Units with 2 or less HP during this turn.
+GD02-041,Sugai's Gelgoog (GQ),Unit,red,4,4,3,3,Clan,"deploy,ping",Shiiko Sugai,,0,0,,GD02,,[Deploy]Choose 1 enemy Unit that is Lv.5 or higher. Deal 2 damage to it.
+GD02-042,Gundam Ashtaron (MA Mode),Unit,red,3,2,3,2,New UNE,"high_maneuver,deploy",Olba Frost,,0,0,,GD02,,[Deploy]Choose 1 of your (New UNE) Units. It gains <High-Maneuver> during this turn. (This Unit can't be blocked.)
+GD02-043,Daughtress Weapon,Unit,red,2,2,2,1,New UNE,deploy,,,0,0,,GD02,,"[Deploy]If you have another (New UNE) Unit in play, deploy 1 rested [Daughtress]((New UNE)･AP0･HP1) Unit token."
+GD02-044,Daughtress Command,Unit,red,2,2,3,1,New UNE,,,,0,0,,GD02,,"[Destroyed]If you have another (New UNE) Unit in play, deploy 1 rested [Daughtress]((New UNE)･AP0･HP1) Unit token."
+GD02-045,GINN Long-Range Reconnaissance Type,Unit,red,2,2,1,1,ZAFT,deploy_draw:1,,,0,0,,GD02,,"[Attack]If this Unit has 5 or more AP and it is attacking an enemy Unit, draw 1."
+GD02-046,Sayla's Light-Type Guncannon,Unit,red,4,2,3,4,Earth Federation,"deploy,ping",Sayla Mass,,0,0,,GD02,,[Deploy]Choose 1 enemy Unit token. Deal 2 damage to it.
+GD02-047,Gaza C,Unit,red,1,1,0,1,Neo Zeon,ping,,,0,0,,GD02,,[Activate･Main]Rest this Unit：Destroy this and choose 1 enemy Unit that is Lv.5 or lower. Deal 1 damage to it.
+GD02-048,Zaku Ⅲ (Sleeves),Unit,red,3,2,4,1,Neo Zeon,,Neo Zeon (Trait),,0,0,,GD02,,None
+GD02-049,Daughtress,Unit,red,1,1,1,1,New UNE,support:1,,,0,0,,GD02,,None
+GD02-050,Ga-Zowmn (Sleeves),Unit,red,2,2,3,2,Neo Zeon,,,,0,0,,GD02,,None
+GD02-051,01 Gundam,Unit,red,2,2,2,3,Earth Federation,,,,0,0,,GD02,,None
+GD02-052,Guncannon (GQ),Unit,red,2,2,3,2,Earth Federation,,,,0,0,,GD02,,None
+GD02-053,Gundam X,Unit,purple,7,5,6,5,Vulture,,Garrod Ran,,0,0,,GD02,,[Suppression] (Damage to Shields by an attack is dealt to the first 2 cards simultaneously.)
+GD02-054,Gundam Barbatos 1st Form,Unit,purple,3,2,3,2,"Tekkadan,Gundam Frame",deploy_draw:1,Mikazuki Augus,,0,0,,GD02,,"[Attack]If this Unit is damaged, draw 1."
+GD02-055,Gundam Gusion Rebake,Unit,purple,5,4,3,5,"Tekkadan,Gundam Frame","blocker,deploy,ping",Akihiro Altland,,0,0,,GD02,,[Deploy]Choose 1 of your Units and 1 enemy Unit. Deal 1 damage to them.
+GD02-056,Gundam X,Unit,purple,4,3,3,4,Vulture,deploy_draw:1,Garrod Ran,,0,0,,GD02,,[During Pair･(Vulture) Pilot][Destroyed]Choose 1 (Vulture) Unit card that is Lv.5 or higher from your trash. Add it to your hand.
+GD02-057,Zedas,Unit,purple,5,3,5,3,"UE,Vagan",ping,Desil Galette,,0,0,,GD02,,"[During Pair][Attack]You may choose 1 of your other Units. Destroy it. If you do, choose 1 enemy Unit that is Lv.4 or lower. Deal 2 damage to it."
+GD02-058,Ryusei-Go (Graze Custom Ⅱ),Unit,purple,3,2,2,2,Tekkadan,"deploy_draw:1,ping",Tekkadan (Trait),,0,0,,GD02,,"[Deploy]Choose 1 of your Units. Deal 1 damage to it. If you do, draw 1. Then, discard 1."
+GD02-059,Gundam Airmaster,Unit,purple,4,3,4,3,Vulture,blocker,Vulture (Trait),,0,0,,GD02,,None
+GD02-060,Gundam Leopard,Unit,purple,5,4,4,4,Vulture,deploy,Roybea Loy,,0,0,,GD02,,"[Deploy]If there are 7 or more cards in your trash, choose 1 enemy Unit that is Lv.4 or lower. Rest it."
+GD02-061,Hyakuri,Unit,purple,4,2,3,3,Teiwaz,,Teiwaz (Trait),,0,0,,GD02,,"[When Paired･Purple Pilot]If there are 3 or more (Teiwaz)/(Tekkadan) cards in your trash, choose 1 enemy Unit with 3 or less AP. Rest it."
+GD02-062,Amida's Hyakuren,Unit,purple,4,2,3,4,Teiwaz,,Teiwaz (Trait),,0,0,,GD02,,None
+GD02-063,Gundam Airmaster (Fighter Mode),Unit,purple,3,2,3,3,Vulture,,Vulture (Trait),,0,0,,GD02,,None
+GD02-064,Gundam Leopard,Unit,purple,5,4,4,4,Vulture,,Vulture (Trait),,0,0,,GD02,,"During your turn, while there are 7 or more cards in your trash, this Unit can't receive effect damage from enemy Commands."
+GD02-065,Jenice Custom,Unit,purple,1,1,1,2,Vulture,,,,0,0,,GD02,,None
+GD02-066,Gafran,Unit,purple,2,1,2,3,"UE,Vagan",,,,0,0,,GD02,,This Unit can't choose the enemy player as its attack target.
+GD02-067,Baqto,Unit,purple,2,2,2,3,"UE,Vagan",,,,0,0,,GD02,,None
+GD02-068,Gundam Barbatos 3rd Form,Unit,purple,4,2,3,5,"Tekkadan,Gundam Frame",deploy,Tekkadan (Trait),,0,0,,GD02,,[Deploy]Deal 2 damage to this Unit.
+GD02-069,Zeta Gundam,Unit,white,6,5,5,4,AEUG,,Kamille Bidan,,0,0,,GD02,,"[During Link][Activate･Main][Once per Turn]Choose 1 active friendly Base. Rest it. If you do, set this Unit as active. It can't choose the enemy player as its attack target during this turn."
+GD02-070,Gundam Kimaris,Unit,white,5,4,4,4,"Gjallarhorn,Gundarm Frame",deploy_draw:1,Gaelio Bauduin,,0,0,,GD02,,"[Deploy]If there are 4 or more (Gjallarhorn) cards in your trash, draw 2. If you do, discard 2."
+GD02-071,Gundam Mk-II (AEUG),Unit,white,4,3,3,4,AEUG,deploy,AEUG (Trait),,0,0,,GD02,,"[Deploy]If a friendly white Base is in play, you may pair 1 (AEUG) Pilot card from your hand with this Unit."
+GD02-072,Hyaku-Shiki,Unit,white,5,3,4,4,AEUG,"repair:1,blocker",Quattro Bajeena,,0,0,,GD02,,none
+GD02-073,Carta's Graze Ritter (Ground Type),Unit,white,4,3,5,4,Gjallarhorn,,Carta Issue,,0,0,,GD02,,"During your opponent's turn, the enemy Unit battling this Unit gains <First Strike>. (While this Unit is attacking, it deals damage before the enemy Unit.)"
+GD02-074,Gundam Aerial Rebuild,Unit,white,7,5,5,5,Academy,"high_maneuver,blocker",Suletta Mercury,,0,0,,GD02,,"[During Pair]While there are 4 or more Command cards in your trash, this Unit gains <Blocker>. (Rest this Unit to change the attack target to it.)"
+GD02-075,Rick Dias (Red),Unit,white,4,3,4,3,AEUG,,AEUG (Trait),,0,0,,GD02,,"[Attack]Choose 1 active friendly Base. Rest it. If you do, choose 1 enemy Unit that is Lv.4 or lower. It gets AP-2 during this battle."
+GD02-076,Buster Gundam,Unit,white,4,3,4,3,Triple Ship Alliance,blocker,Coordinator (Trait),,0,0,,GD02,,"While this Unit has 5 or more AP, it gains <Blocker>. (Rest this Unit to change the attack target to it.)"
+GD02-077,Ein's Schwalbe Graze,Unit,white,4,2,4,3,Gjallarhorn,,Gjallarhorn (Trait),,0,0,,GD02,,None
+GD02-078,Gundam Pharact,Unit,white,5,3,5,4,Academy,,Elan Ceres,,0,0,,GD02,,None
+GD02-079,Rick Dias,Unit,white,3,2,3,3,AEUG,blocker,,,0,0,,GD02,,None
+GD02-080,Nemo,Unit,white,2,1,2,2,AEUG,,,,0,0,,GD02,,None
+GD02-081,Methuss,Unit,white,2,2,1,1,AEUG,deploy,Fa Yuiry,,0,0,,GD02,,"[Deploy]If a friendly white Base is in play, choose 1 enemy Unit. It gets AP-2 during this turn."
+GD02-082,Gaelio's Schwalbe Graze,Unit,white,3,2,3,3,Gjallarhorn,blocker,Gaelio Bauduin,,0,0,,GD02,,"While you have another (Gjallarhorn) Unit in play, this Unit gains <Blocker>. (Rest this Unit to change the attack target to it.)"
+GD02-083,Graze Ritter (Ground Type),Unit,white,3,2,3,2,Gjallarhorn,,,,0,0,,GD02,,"[Destroyed]If it is your opponent's turn, choose 1 of your (Gjallarhorn) Units. Set it as active."
+GD02-084,Lauda's Dilanza,Unit,white,2,2,1,3,Academy,,Academy (Trait),,0,0,,GD02,,None
+GD02-085,Four Murasame,Pilot,blue,5,1,0,0,"Titans,Cyber-Newtype",deploy_draw:1,,Four Murasame,2,1,,GD02,,"[During Link][Once per Turn]During your turn, when this Unit recovers HP, if you have 4 or less cards in your hand, draw 1."
+GD02-086,Jerid Messa,Pilot,blue,3,1,0,0,Titans,,,Jerid Messa,1,1,,GD02,,"While you have another (Titans) Unit in play, this gets AP+1."
+GD02-087,"Orga, Crot, and Shani",Pilot,blue,5,1,0,0,"Earth Alliance,Biological CPU",,,"Orga, Crot, and Shani",2,1,,GD02,,"[When Linked]If this is a blue Unit, choose 1 enemy Unit with <Blocker>. Rest it."
+GD02-088,Flit Asuno,Pilot,green,3,1,0,0,"Earth Federation,Asuno Family,X-Rounder",deploy_draw:1,,Flit Asuno,1,1,,GD02,,"[When Linked]Look at the top 3 cards of your deck. You may reveal 1 green (Earth Federation) Unit card/1 card with ""AGE Device"" in its card name among them and add it to your hand. Return the remaining cards randomly to the bottom of your deck."
+GD02-089,Lalah Sune,Pilot,green,3,1,0,0,"Zeon,Newtype",breach:1,,Lalah Sune,1,1,,GD02,,[When Paired]Choose 1 of your other (Zeon) Link Units. It gains <Breach 1> during this turn.
+GD02-090,Challia Bull (GQ),Pilot,green,5,1,0,0,"Zeon,Newtype",,,Challia Bull (GQ),1,2,,GD02,,"While you have another Unit with <High-Maneuver> in play, this Unit gets AP+1."
+GD02-091,Haman Karn,Pilot,red,5,1,0,0,"Neo Zeon,Newtype",ping,,Haman Karn,2,1,,GD02,,"[When Paired]If this Unit is red, choose 1 enemy Unit whose Lv. is equal to or lower than this Unit. Deal 1 damage to it."
+GD02-092,Shagia Frost,Pilot,red,4,1,0,0,New UNE,,,Shagia Frost,1,2,,GD02,,[During Link][Attack]Choose 1 of your (New UNE) Units. It gets AP+2 during this turn.
+GD02-093,Olba Frost,Pilot,red,3,1,0,0,New UNE,deploy_draw:1,,Olba Frost,1,1,,GD02,,"During your turn, when this Unit destroys an enemy Unit paired with a (Newtype) Pilot with battle damage, draw 1."
+GD02-094,Garrod Ran & Tiffa Adill,Pilot,purple,4,1,0,0,"Vulture,Newtype",deploy_draw:1,,Garrod Ran & Tiffa Adill,1,2,,GD02,,"[When Paired]You may discard 1. If you do, look at the top 3 cards of your deck. You may reveal 1 (Vulture) Unit card among them and add it to your hand. Return the remaining cards randomly to the bottom of your deck."
+GD02-095,Lafter Frankland,Pilot,purple,4,1,0,0,Teiwaz,high_maneuver,,Lafter Frankland,2,1,,GD02,,"[Attack]If this Unit is damaged and Lv.5 or lower, it gains <High-Maneuver> during this battle. (This Unit can't be blocked.)"
+GD02-096,Desil Galette,Pilot,purple,4,1,0,0,"Vagan,X-Rounder",,,Desil Galette,2,1,,GD02,,[When Linked]You may choose 1 (Vagan) Unit card that is Lv.2 or lower from your trash. Pay its cost to deploy it.
+GD02-097,Kamille Bidan,Pilot,white,5,1,0,0,"AEUG,Newtype",,,Kamille Bidan,1,2,,GD02,,"Add this card to your hand. While there is a friendly white Base in play, this Unit gets AP+2."
+GD02-098,Quattro Bajeena,Pilot,white,4,1,0,0,"AEUG,Newtype",deploy_draw:1,,Quattro Bajeena,1,2,,GD02,,"[When Linked]If this is an (AEUG) Unit, draw 1. If you do, discard 1."
+GD02-099,Gaelio Bauduin,Pilot,white,3,1,0,0,Gjallarhorn,,,Gaelio Bauduin,1,1,,GD02,,"[When Paired]If there are 4 or more (Gjallarhorn) cards in your trash, choose 1 enemy Unit. It gets AP-2 during this turn."
+GD02-100,Dramatic Turnabout,Command,blue,5,2,0,0,,"deploy_draw:1,recover,timing:main",,,0,0,,GD02,,"Choose 1 friendly damaged Unit. It recovers 2 HP. Then, draw 1. Burst: Draw 1."
+GD02-101,Beneath the Mask,Command,blue,1,1,0,0,,timing:both,,,0,0,,GD02,,[Main]/[Action]Choose 1 to 2 enemy Units that are Lv.2 or lower. Rest them.
+GD02-102,Mouar’s Determination | Mouar Pharaoh,Command,blue,2,1,1,0,Titans,timing:both,,Mouar Pharaoh,0,0,,GD02,,[Main]/[Action]Choose 1 friendly (Titans) Unit. It gets AP+2 during this turn. [Pilot][Mouar Pharaoh]
+GD02-103,AGE Device,Command,green,4,2,0,0,,"deploy_draw:1,timing:main",,,0,0,,GD02,,"If you have an (AGE System) Unit in play, place 1 EX Resource. Burst: Choose 1 (Asuno Family) Pilot card from your trash. Add it to your hand."
+GD02-104,Turning Point of History,Command,green,1,1,0,0,,"deploy_draw:1,timing:main",,,0,0,,GD02,,"[Main]Look at the top 3 cards of your deck and return 1 to the top. Return the remaining cards to the bottom of your deck. Then, if you have a (Newtype) Pilot in play, draw 1."
+GD02-105,Valedictorian | Xavier Olivette,Command,green,2,1,1,0,"Zeon,Newtype",timing:action,,Xavier Olivette,0,0,,GD02,,[Action]Choose 1 of your Unit tokens. It can't receive battle damage from enemy Units during this battle.
+GD02-106,White Wolf | Woolf Enneacle,Command,green,3,1,1,0,Earth Federation,timing:action,,Woolf Enneacle,0,0,,GD02,,"[Action]During this battle, your shield area cards can't receive damage from enemy Units that are Lv.3 or lower."
+GD02-107,All-Range Attack,Command,red,4,2,0,0,,"ping,timing:main",,,0,0,,GD02,,Deal 1 damage to all enemy Units other than Link Units. Burst: Choose 1 enemy Unit. Deal 1 damage to it.
+GD02-108,That One Looks A Lot Stronger?,Command,red,3,1,0,0,,timing:main,,,0,0,,GD02,,"[Main]Choose 1 friendly (Clan) Unit. During this turn, it may choose an active enemy Unit that is Lv.4 or lower as its attack target."
+GD02-109,Undying Persistence | Shiiko Sugai,Command,red,4,1,1,1,"Clan,Newtype","ping,timing:both",,Shiiko Sugai,0,0,,GD02,,[Main]/[Action]Choose 1 enemy Unit. Deal 1 damage to it.
+GD02-110,Awakened Power,Command,purple,6,2,0,0,,timing:main,,,0,0,,GD02,,[Main]Choose 1 Unit card that is Lv.5 or lower from your trash. Pay its cost to deploy it.
+GD02-111,Decisive Last Resort,Command,purple,5,4,0,0,,"ping,timing:main",,,0,0,,GD02,,"Choose 6 purple Unit cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit. Destroy it. Burst: Choose 1 enemy Unit that is Lv.3 or lower. Deal 2 damage to it."
+GD02-112,Momentary Respite,Command,purple,4,3,0,0,,"deploy_draw:1,timing:main",,,0,0,,GD02,,Choose 1 purple Pilot card from your trash. Add it to your hand. Burst: Draw 1.
+GD02-113,Sisterly Care | Amida Arca,Command,purple,4,2,1,1,Teiwaz,"ping,timing:both",,Amida Arca,0,0,,GD02,,"[Main]/[Action]If a friendly (Teiwaz) Link Unit is in play, choose 1 enemy Unit with 2 or less AP. Destroy it. [Pilot][Amida Arca]"
+GD02-114,It's Name is Ryusei-Go | Norba Shino,Command,purple,2,1,1,0,"Tekkadan,Alaya-Vijnana",timing:both,,Norba Shino,0,0,,GD02,,[Main]/[Action]Choose 1 damaged friendly Unit. It gets AP+2 during this turn. [Pilot][Norba Shino]
+GD02-115,Familial Devotion | Witz Sou,Command,purple,2,1,0,1,Vulture,timing:both,,Witz Sou,0,0,,GD02,,[Main]/[Action]Choose 1 friendly (Vulture) Unit. It gets AP+2 during this turn. [Pilot][Witz Sou]
+GD02-116,Comrades Come First | Roybea Loy,Command,purple,3,1,1,0,Vulture,timing:main,,Roybea Loy,0,0,,GD02,,"[Main]If there are 7 or more cards in your trash, choose 1 friendly (Vulture) Unit. During this turn, it may choose an active enemy Unit that is Lv.4 or lower as its attack target. [Pilot][Roybea Loy]"
+GD02-117,A New Sign,Command,white,4,3,0,0,,"deploy_draw:1,timing:main",,,0,0,,GD02,,"Draw 3. Then, discard 2. Burst: Choose 1 (AEUG) Base card from your trash. Add it to your hand."
+GD02-118,Heart Set on Revenge | Ein Dalton,Command,white,3,1,1,0,Gjallarhorn,timing:action,,Ein Dalton,0,0,,GD02,,[Action]Choose 1 enemy Unit with 4 or less HP battling a friendly Unit with <Blocker>. Return it to its owner's hand. [Pilot][Ein Dalton]
+GD02-119,Persistent and Fortudinous | Carta Issue,Command,white,2,1,1,0,Gjallarhorn,timing:action,,Carta Issue,0,0,,GD02,,"[Action]If you have a (Gjallarhorn) Link Unit in play, choose 1 enemy Unit. It gets AP-3 during this battle. [Pilot][Carta Issue]"
+GD02-120,Aspiring Pilot | Fa Yuiry,Command,white,3,1,0,1,AEUG,"recover,timing:action",,Fa Yuiry,0,0,,GD02,,[Action]Choose 1 of your (AEUG) Units/Bases. It recovers 2 HP. [Pilot][Fa Yuiry]
+GD02-121,Dominion,Base,blue,4,1,0,5,"Earth Alliance,Warship",recover,,,0,0,,GD02,,"Then, choose 1 friendly blue Unit. It recovers 2 HP."
+GD02-122,Alexandria,Base,blue,3,2,0,5,"Titans,Warship",ping,,,0,0,,GD02,,"Then, choose 1 rested enemy Unit that is Lv.4 or lower. Deal 1 damage to it."
+GD02-123,Sodon,Base,green,3,2,0,5,"Zeon,Warship",,,,0,0,,GD02,,"Then, choose 1 friendly Unit token. During this turn, it may choose an active enemy Unit with 5 or less AP as its attack target."
+GD02-124,Diva,Base,green,3,1,0,5,"Earth Federation,Warship",,,,0,0,,GD02,,"During your turn, while you are Lv.7 or higher, all friendly green (Earth Federation) Units get AP+1."
+GD02-125,Gwadan,Base,red,4,2,0,5,"Neo Zeon,Warship",deploy_draw:1,,,0,0,,GD02,,"Then, if it is your turn, you may discard 1 red card. If you do, draw 1."
+GD02-126,Shuji's Hideout,Base,red,3,1,0,5,"Clan,Stronghold",ping,,,0,0,,GD02,,[Destroyed]Choose 1 enemy Unit that is Lv.4 or lower. Deal 1 damage to it.
+GD02-127,Freeden,Base,purple,2,1,0,5,"Vulture,Warship",,,,0,0,,GD02,,[Destroyed]Place the top 2 cards of your deck into your trash.
+GD02-128,Hammerhead,Base,purple,4,2,0,5,"Teiwaz,Warship",ping,,,0,0,,GD02,,"Then, if it is your turn and a friendly (Teiwaz) Link Unit is in play, choose 1 enemy Unit with 2 or less AP. Destroy it."
+GD02-129,Argama,Base,white,3,1,0,4,"AEUG,Warship",,,,0,0,,GD02,,This Base can't receive enemy effect damage.
+GD02-130,Sleipnir,Base,white,4,2,0,5,"Gjallarhorn,Warship",,,,0,0,,GD02,,"Then, if a friendly (Gjallarhorn) Unit is in play, choose 1 enemy Unit. It gets AP-2 during this turn."
+GD03-001,Gundam NT-1 | RX-78NT-1,Unit,blue,5,4,4,4,Earth Federation,"repair:2,when_paired_draw:1",Christina Mackenzie/Amuro Ray,,0,0,,GD03,,"[When Paired] Choose 1 rested enemy Unit. Deal 1 damage to it. When this effect destroys an enemy Unit, draw 1."
+GD03-002,The-O | PMX-003,Unit,blue,7,5,5,5,"Titans,Jupitris",repair:3,Paptimus Scirocco,,0,0,,GD03,,"[During Pair] When on of your other Units with <Repair> attacks, choose 1 enemy Unit whose Lv. is equal to or lower than that Unit. Rest it."
+GD03-003,MEssala | PMX-000,Unit,blue,6,4,5,4,"Titans,Jupitris","repair:1,blocker",Paptimus Scirocco,,0,0,,GD03,,None
+GD03-004,Hambrabi | RX-139,Unit,blue,5,4,5,3,Titans,,Yazan Gable,,0,0,,GD03,,"[Attack] If you have 2 or more other (Titans) Units in play, choose 1 enemy Unit with 5 or less HP. Rest it."
+GD03-005,Kshatriya Besserung | MS-06FZ,Unit,blue,6,5,4,4,Neo Zeon,"repair:1,deploy_draw:1",Marida Cruz,,0,0,,GD03,,[Deploy] Draw 1.
+GD03-006,Penelope (Middle Form) | RX-104FF,Unit,blue,6,5,4,4,Earth Federation,deploy,Lane Aim,,0,0,,GD03,,[Deploy] Choose 1 to 2 enemy Units with 3 or less HP. Rest them.
+GD03-010,Full Armor Unicorn Gundam (Destroy Mode),Unit,blue,8,6,6,6,Civilian,repair:3,Banagher Links,,0,0,,GD03,,None
+GD03-015,Baund Doc | NRD-055,Unit,blue,6,5,4,5,Titans,breach:4,Jerid Messa,,0,0,,GD03,,[Activate Main] [Once per Turn] Exile 3 (Titans) cards from your trash: This Unit gains <Breach 4>
+GD03-016,Full Armor Unicorn Gundam (Unicorn Mode),Unit,blue,5,3,5,4,Civilian,,Banagher Links,,0,0,,GD03,,None
+GD03-020,Zaku II FZ | MS-06FZ,Unit,green,2,2,1,2,"Zeon,Cyclops Team",,Bernand Wiseman,,0,0,,GD03,,"[When Paired] If there are 4 or more (Cyclops Team) cards in your trash, deploy 2 rested [Ad Balloon](Civilian)-AP0-HP1-This Unit can't be set as active or paired with a Pilot) Unit tokens. White you have a Unit with ""Ad Balloon"" in its card name in play, this Unit can't receive enemy battle damage."
+GD03-021,Gundam Deathsycthe Hell,Unit,green,8,7,6,5,G Team,deploy,Duo Maxwell,,0,0,,GD03,,"[Deploy] Choose 1 of your (Operation Meteor)/(G Team) Units. During this turn, it may choose an active enemy Unit as its attack target."
+GD03-022,Gundam Kyrios | GN-003,Unit,green,5,3,5,3,"CB,GN Drive",ping,Allelujah Haptism/Hallelujah Haptism,,0,0,,GD03,,"[During Link] During your turn, when this Units destroys an enemy Unit with battle damage, deal 1 damage to all enemy Units that are LV.3 or lower."
+GD03-023,G-Bouncer | WMS-G8S,Unit,green,4,3,4,3,Earth Federation,high_maneuver,Earth Federation (Trait),,0,0,,GD03,,"When you place an EX Resource, choose 1 of your (AGE System) Units. It gains <High-Maneuver> during this turn."
+GD03-025,Gundam Sandrock Custom | XXXG-01SR2,Unit,green,6,5,5,4,G Team,,Quatre Raberba Winner,,0,0,,GD03,,Enemy Units choose one of your rested (Maganac Corps) Units as their attack target if possible when attacking.
+GD03-028,Auda's Maganac | WMS-03,Unit,green,3,2,2,3,Maganac Corps,,Maganac Corps (Trait),,0,0,,GD03,,"[Attack] If you are attacking an enemy Unit, this Unit gets AP+2 during this battle."
+GD03-029,Gundam Heavyarms Custom | XXG-01H2,Unit,green,6,5,4,5,G Team,ping,Trowa Barton,,0,0,,GD03,,"During your turn, when this Unit destroys an enemy Unit with battle damage, deal 2 damage to all enemy Units with <Blocker>."
+GD03-031,Gundam AGE-1 Flat | AGE-1F,Unit,green,4,2,4,3,"Earth Federation,AGE System",,Asuno Family (Trait),,0,0,,GD03,,None
+GD03-034,GQuuuuuuX,Unit,red,8,7,6,5,Clan,"deploy,ping",Amate Yuzuriha (Machu)/Nyaan,,0,0,,GD03,,<Suppression> [Deploy] Choose 1 enemy Unit. Deal 3 damage to it.
+GD03-035,GFreD,Unit,red,6,4,4,5,Zeon,ping,Nyaan,,0,0,,GD03,,"[Activate Main] [Once per Turn] 1, exlie 1 Pilot card from your trash : Deal 1 damage to all enemy Units. [When Linked] During this turn, this Unit may choose an active anemy Unit with AP equal to or less than this Unit as its atttack target."
+GD03-039,Red Gundam,Unit,red,4,2,2,4,Clan,"deploy,ping",Clan (Trait),,0,0,,GD03,,"[Deploy] Choose 1 other active friendly (Clan) Unit. Rest it. If you do, choose 1 enemy Unit with 2 or less AP. Deal 2 damage to it."
+GD03-041,Patulia | MAN-003,Unit,red,7,6,5,6,SRA,"deploy,ping",Carris Nautilus,,0,0,,GD03,,[Deploy] Deal 3 damage to all Bases.
+GD03-042,Duel Gundam (Assault Shroud) | GAT-x102,Unit,red,5,3,3,4,ZAFT,,Yzak Jule,,0,0,,GD03,,"While this Unit has 5 or more AP, it may choose an active enemy Unit that is LV.5 or lower as its attack target."
+GD03-044,Daughtress Flyer | DR-6800FA,Unit,red,3,2,2,3,New UNE,deploy,,,0,0,,GD03,,[Deploy] Deploy 1 rested [Daughtress]((New UNE)-AP0-HP1) Unit token.
+GD03-045,Balient | NR-001,Unit,red,3,2,2,4,New UNE,,,,0,0,,GD03,,"While you have a Unit token in play, this Unit gets AP+1"
+GD03-050,Gundam Barbatos Lupus | ASW-G-08,Unit,purple,7,6,5,5,"Tekkadan,Gundam Frame",ping,Mikazuki Augus,,0,0,,GD03,,"[Activate Main] Choose 3 (Tekkadan)/(Teiwaz) Unit cards from your trash. Exile them from the game. If you do, choose 1 enemy Unit. Deal 2 damage to it."
+GD03-051,Gundam X Divider | GX-9900-DV,Unit,purple,6,4,4,4,Vulture,,Garrod Ran/Jamil Neate,,0,0,,GD03,,[When Linked] You may choose 1 Unit card that is Lv.4 or lower from your trash. Pay its cost to deploy it.
+GD03-059,Zedas R | xxv-xvr,Unit,purple,4,3,4,3,Vagan,deploy,X-Rounder (Trait),,0,0,,GD03,,"[Deploy] You may choose 1 (Vagan) card from your trash. Exile it from the game. If you do, choose 1 of your (Vagan) Units. It gets AP+2 during this turn."
+GD03-060,CGS Mobile Worker (Commander Type) | TK-53,Unit,purple,2,2,0,2,Tekkadan,,,,0,0,,GD03,,"[Once per Turn] During your turn, when this Unit receives effect damage, deploy 1 rested [CGS Mobile Worked][[Tekkadan)-AP1-HP1) Unit token."
+GD03-061,Gundam Barbatos 6th Form | ASW-G-08,Unit,purple,6,5,5,4,"Tekkadan,Gundam Frame",repair:3,Mikazuki Augus,,0,0,,GD03,,"While this Unit has 1 HP, it gains <Repair 3>"
+GD03-064,Defurse | xvm-gz,Unit,purple,5,4,2,5,"UE,Vagan",deploy_draw:1,,,0,0,,GD03,,"[Deploy] You may choose 1 (X-Rounder) card from your trash and add it to your hand. If you do, discard 1."
+GD03-067,Rouei | STH-05R,Unit,purple,4,3,3,4,"Teiwaz,Tekkadan",deploy,Teiwaz/Tekkadan (Trait),,0,0,,GD03,,[Deploy] You may choose 1 of your Units. Deal 1 damage to it. It gets AP+1 during this turn.
+GD03-070,Freedom Gundam | ZFMG-Z10A,Unit,white,6,5,4,5,Triple Ship Alliance,,Kira Yamato,,0,0,,GD03,,"While this Unit is rested, friendly Shields can't receive battle damage from enemy Units."
+GD03-072,Aile Strike Gundam | GAT-X104+AWM/E-X01,Unit,white,4,3,3,4,Triple Ship Alliance,"blocker,deploy_draw:1",Mu La Flaga,,0,0,,GD03,,"[Deploy] If you have another (Triple Ship Alliance) UNit in play, draw 1. Then discard 1."
+GD03-074,Tieren Taozi MSJ-06-SP,Unit,white,3,2,3,1,Superpower Bloc,,Superpower Bloc (Trait),,0,0,,GD03,,"[During Pair] When you have another (Superpower Bloc) Unit in play, enemy Units choose this rested Unit as their attack target if possible when attacking."
+GD03-076,Freedom Gundam (METEOR) | ZGMF-X10A,Unit,white,8,6,6,6,Triple Ship Alliance,,Kira Yamato,,0,0,,GD03,,"[Once per Turn] During your turn, when your (Triple Ship Alliance) Unit deals battle damage to an enemy Unit, you may return the enemy Unit to its owner's hand."
+GD03-078,Tieren High Mobility Type | MSJ-06II-C,Unit,white,2,2,3,1,Superpower Bloc,,Sergei Smirnov,,0,0,,GD03,,[During Link] [Destroyed] Return the card paired with this Unit to your hand.
+GD03-079,G-Defenser | FXA-05D,Unit,white,3,2,3,2,AEUG,,AEUG (Trait),,0,0,,GD03,,"When you rest your Base with one of your Units' effects, you may rest this Unit instead."
+GD03-080,Gundam Kimaris Trooper (Trooper Mode) | ASW-G-66,Unit,white,6,4,5,4,"Gjallarhorn,Gundarm Frame",deploy_draw:1,Gaelio Bauduin,,0,0,,GD03,,[When Linked] Choose 1 (Gjallarhorn) Command card from your trash. Add it to your hand.
+GD03-081,AEU Enact Demonstration Color | AEU-09T,Unit,white,2,1,2,1,Superpower Bloc,,Superpower Bloc (Trait),,0,0,,GD03,,This Unit can only attack during a turn when one of your (Superpower Block) / (UN) Units is deployed.
+GD03-084,Paptimus Scirocco,Pilot,blue,5,1,0,0,"Titans,Jupitris,Newtype","repair:2,deploy_draw:1",,Paptimus Scirocco,2,2,,GD03,,"[When Linked] Choose 1 of your other Units. it gains <Repair 2> during this turn. Then, if it is a (Jupitris) Unit, draw 1."
+GD03-085,Christina Mackenzie,Pilot,blue,3,1,0,0,Earth Federation,,,Christina Mackenzie,1,1,,GD03,,"When playing this card from your hand and pairing it with a Unit with ""Gundam NT-1"" in its card name, play this card as if it has 0 cost."
+GD03-086,Yazan Gable,Pilot,blue,4,1,0,0,Titans,,,Yazan Gable,1,2,,GD03,,[Attack] Choose 1 of your (Titans) Units whose Lv. is equal to or lower than this Unit. It gets AP+1 during this turn.
+GD03-087,Sarah Zabiarov,Pilot,blue,3,1,0,0,Titans,,,Sarah Zabiarov,1,1,,GD03,,[When Linked] Choose 1 enemy Unit that is LV.3 or lower. Rest it.
+GD03-089,Bernard Wiseman,Pilot,green,2,1,0,0,"Zeon,Cyclops Team",,,Bernard Wiseman,0,1,,GD03,,Increase this Unit's AP by an amount equal to the number of (Cyclops Team) Pilot cards/Command cards with unique names in your trash.
+GD03-092,Nyaan,Pilot,red,4,1,0,0,"Zeon,Newtype",ping,,Nyaan,1,2,,GD03,,"[When Linked] Place the top card of your deck into your trash. If you placed a (Zeon)/(Clan) card with this effect, choose 1 enemy Unit. Deal 1 damage to it."
+GD03-095,Azee Gurumin,Pilot,purple,4,1,0,0,Teiwaz,,,Azee Gurumin,1,2,,GD03,,"[Once per Turn] When this Unit receives effect damage, choose 1 enemy Unit. It gets AP-1 during this turn."
+GD03-096,Jamil Neate,Pilot,purple,4,1,0,0,"Vulture,Newtype",deploy_draw:1,,Jamil Neate,2,1,,GD03,,"[During Link] [Attack] You may discard 1. If you do, draw 1."
+GD03-099,Emma Sheen,Pilot,white,3,1,0,0,AEUG,,,Emma Sheen,1,1,,GD03,,"[During Link] [Destroyed] If a friendly white Base is in play, choose 1 enemy Unit whose Lv. is equal to or lower than this Unit. Return it to its owner's hand."
+GD03-105,Bridge Crew,Command,green,4,1,0,0,,timing:main,,,0,0,,GD03,,"[Main] Choose 1 friendly Unit. During this turn, it may choose an active enemy Unit that has not Pilot paired with it as its attack target."
+GD03-110,Eliminate Target,Command,red,6,1,0,0,,"ping,timing:both",,,0,0,,GD03,,[Main] / [Action] Choose 1 Pilot paired with an enemy Unit that is LV.5 or lower. Destroy it.
+GD03-112,Warped Intent,Command,red,4,1,0,0,,timing:both,,,0,0,,GD03,,"[Main] / [Action] During this turn, all Units paired with a Pilot get AP+2"
+GD03-113,Human Karma,Command,red,3,2,0,0,,"ping,timing:both",,,0,0,,GD03,,"[Main] / [Action] Choose 1 active friendly Unit. Rest it. If you do, choose 1 enemy Unit whose Lv. is equal to or lower than the Unit rested with this ability. Deal 3 damage to it."
+GD03-114,Look of Determination,Command,purple,2,2,0,0,,"ping,timing:action",,,0,0,,GD03,,"[Action] Choose 1 active enemy Unit that is Lv.2 or lower. Destroy it. If there are 10 or more cards in your trash, choose 1 active enemy Unit that is Lv.4 or lower instead."
+GD03-117,Orga's Order,Command,purple,3,1,0,0,,timing:main,,,0,0,,GD03,,"[Main] If 1 to 4 enemy units are in play, deploy 1 [Graze Custom]((Tekkadan) - AP2 - HP2) Unit token. If 5 or more are in play, deploy 1 [Gundam Barbatos 4th Form]((Tekkadan) - AP4 - HP4) Unit token."
+GD03-118,Awakened Potential,Command,white,4,1,0,0,,"blocker,timing:action",,,0,0,,GD03,,"[Action] Choose 1 rested enemy Unit that is Lv.4 or lower. Return it to its owner's hand. Then, if there are 2 or more cards with """"Awakened Potential"" in their card name in your trash, you may choose 1 friendly Unit. It gains <Blocker> during this turn."
+GD03-119,Awkward Approach,Command,white,3,1,0,0,,timing:main,,,0,0,,GD03,,"Effect: [Main] Choose 1 rested friendly Base. Set it as active. If you do, all enemy Units get AP-1 during this turn."
+GD03-120,Immortal Colasour | Patrick Colasour,Command,white,2,1,1,0,Superpower Bloc,timing:main,,Patrick Colasour,0,0,,GD03,,"[Main] During this turn, if a friendly (Superpower Block)/(UN) UNit destroys an enemy Unit with battle damage, choose 1 rested friendly (Superpower Bloc)/(UN) Unit. Set it as active. It can't attack during this turn."
+GD03-121,Unheralded Attack | Katz Kobayashi,Command,white,1,1,1,0,"AEUG,Newtype",timing:action,,Katz Kobayashi,0,0,,GD03,,[Action] Choose 1 friendly Base and 1 enemy Unit with 3 or less HP. Rest them.
+GD03-126,Cyclops Team,Base,green,4,1,0,5,"Zeon,Cyclops Team",,,,0,0,,GD03,,[Deploy] Add 1 of your Shields to your hand. All friendly Unit tokens get AP+1 during your opponent's turn.
+ST01-001,Gundam | RX-78-2,Unit,blue,4,3,3,4,"Earth Federation,White Base Team",repair:2,Amuro Ray,,0,0,,ST01,,"[During Pair] During your turn, all your Units get AP+1."
+ST01-002,Gundam (MA Form) | RX-78-2,Unit,blue,5,3,4,3,"Earth Federation,White Base Team",when_paired_draw:1,Amuro Ray,,0,0,,ST01,,[When Paired (White Base Team) Pilot] Draw 1.
+ST01-003,Guncannon | RX-77,Unit,blue,3,2,2,4,"Earth Federation,White Base Team",,Kai Shiden,,0,0,,ST01,,None
+ST01-004,Guntank | RX-75,Unit,blue,3,2,2,3,"Earth Federation,White Base Team",deploy,Hayato Koboyashi,,0,0,,ST01,,[Deploy] Choose 1 enemy Unit with 2 or less HP. Rest it.
+ST01-005,GM | RGM-79,Unit,blue,2,1,2,2,Earth Federation,,,,0,0,,ST01,,None
+ST01-006,Gundam Aerial (Permet Score Six) | XVX-016,Unit,white,5,4,4,4,Academy,,Suletta Mercury,,0,0,,ST01,,[When Paired] Choose 1 enemy Unit that is Lv.5 or lower. It gets AP-3 during this turn.
+ST01-007,Gundam Aerial (Bit on Form) | XVX-016,Unit,white,4,2,3,4,Academy,,Suletta Mercury,,0,0,,ST01,,None
+ST01-008,Demi Trainer | MSJ-121,Unit,white,1,1,1,1,Academy,blocker,,,0,0,,ST01,,None
+ST01-009,Zowort | F/D-19,Unit,white,2,2,3,2,Academy,blocker,,,0,0,,ST01,,This Unit can't choose the enemy player as its attack target.
+ST01-010,Amuro Ray,Pilot,blue,4,1,0,0,"Earth Federation,White Base Team,Newtype",,,Amuro Ray,2,1,,ST01,,[When Paired] Choose 1 enemy Unit with 5 or less HP. Rest it.
+ST01-011,Suletta Mercury,Pilot,white,4,1,0,0,Academy,,,Suletta Mercury,1,2,,ST01,,[Attack] [Once per Turn] Choose 1 of your Resources. Set it as active.
+ST01-012,Thoroughly Damaged | Hayato Kobayashi,Command,blue,2,1,0,1,"Earth Federation,White Base Team","ping,timing:main",,Hayato Kobayashi,0,0,,ST01,,[Main] Choose 1 rested enemy Unit. Deal 1 damage to it.
+ST01-013,Kai's Resolve | Kai Shiden,Command,blue,3,1,1,0,"Earth Federation,White Base Team","recover,timing:main",,Kai Shiden,0,0,,ST01,,[Main] Choose 1 friendly Unit. It recovers 3 HP.
+ST01-014,Unforeseen Incident,Command,white,3,1,0,0,,timing:both,,,0,0,,ST01,,[Main]/[Action] Choose 1 enemy Unit. It gets AP-3 during this turn.
+ST01-015,White Base,Base,blue,3,2,0,5,"Earth Federation,White Base Team,Warship",,,,0,0,,ST01,,[Active Main][Once Per Turn]2 If you have no units deploy 1 [Gundam]((White Base Team)AP3xHP3) Unit token. If you have one unit deploy 1 [GunCannon]((White Base Team)AP2xHP2) Unit token. If you have two or more units deploy 1 [GunTank]((White Base Team)AP1xHP1) Unit token.
+ST01-016,"Asticassia School of Technology, Earth House",Base,white,2,1,0,5,"Academy,Stronghold",,,,0,0,,ST01,,[Activate Main] Rest this Base : All friendly Link Unites get AP+1 during this turn.
+ST02-001,Wing Gundam | XXXG-01W,Unit,green,6,4,4,5,Operation Meteor,breach:5,Heero Yuy,,0,0,,ST02,,This Unit may choose an active enemy Unit that is Lv.4 or lower as its attack target.
+ST02-002,Wing Gundam (Bird Mode) | XXXG-01W,Unit,green,3,3,2,2,Operation Meteor,deploy,Heero Yuy,,0,0,,ST02,,[Deploy] Place 1 EX Resource
+ST02-003,Gundam Heavyarms | XXXG-01H,Unit,green,5,3,3,4,Operation Meteor,ping,Trowa Barton,,0,0,,ST02,,"[During Pair] During you turn, when this Unit destroys an enemy Unit with battle damage, deal 1 damage to all enemy Units that are Lv.3 or lower."
+ST02-004,Gundam Sandrock | XXXG-01SR,Unit,green,4,2,4,3,Operation Meteor,,Quatre Raberba Winner,,0,0,,ST02,,None
+ST02-005,Maganac | WMS-03,Unit,green,2,2,3,2,Maganac Corps,,,,0,0,,ST02,,None
+ST02-006,Tallgeese | OZ-00MS,Unit,blue,5,4,4,4,OZ,,Zechs Merquise,,0,0,,ST02,,[Activate Main] [Once per Turn] 4: Set this Unit as Active
+ST02-007,Leo | OZ-06MS,Unit,blue,2,2,2,2,OZ,,OZ (Trait),,0,0,,ST02,,None
+ST02-008,Aries | OZ-07AMS,Unit,blue,2,2,2,1,OZ,blocker,,,0,0,,ST02,,None
+ST02-009,Tragos | OZ-07MS,Unit,blue,1,1,1,1,OZ,blocker,,,0,0,,ST02,,None
+ST02-010,Heero Yuy,Pilot,green,4,1,0,0,Operation Meteor,,,Heero Yuy,2,1,,ST02,,This Unit gets AP+1 and HP+1 while linked.
+ST02-011,Zechs Merquise,Pilot,blue,5,1,0,0,OZ,deploy_draw:1,,Zechs Merquise,2,1,,ST02,,"[During Link] During your turn, when this Unit destroys an enemy Unit with battle damage, draw 1 card."
+ST02-012,Simultaneous Fire | Trowa Barton,Command,green,4,1,1,1,Operation Meteor,"breach:3,timing:main",,Trowa Barton,0,0,,ST02,,[Main] Choose 1 of your Units. It gains <Breach 3> during this turn.
+ST02-013,Peaceful Timbre | Quarte Raberba Winner,Command,green,4,1,1,1,Operation Meteor,timing:action,,Quarte Raberba Winner,0,0,,ST02,,"[Action] During this battle, your shield area cards can't receive damage from enemy Units that are Lv.4 or lower."
+ST02-014,Siege Ploy,Command,blue,3,1,0,0,,timing:both,,,0,0,,ST02,,[Main]/[Action] Choose 1 enemy Unit with 5 or less HP. Rest it. Burst: Activate this card's [Main].
+ST02-015,Saint Gabriel Institute,Base,green,2,2,0,5,"Academy,Stronghold",,,,0,0,,ST02,,"Then, look at the top 2 cards of your deck and return 1 to the top and 1 to the bottom."
+ST02-016,Corsica Base,Base,blue,3,3,0,5,"OZ,Stronghold",,,,0,0,,ST02,,"Then, if it is your turn, deploy 1 [Tallgeese]((OZ)AP4*HP2) Unit token. If it is your turn and a card with ""Corsica Base"" in its card name is in your trash, deploy 2 [Leo]((OZ)AP1*HP1) Unit tokens instead."
+ST03-001,Sinanju,Unit,red,6,5,5,4,Neo Zeon,"high_maneuver,ping",Full Frontal,,0,0,,ST03,,[During Pair]This Unit gains <High-Maneuver>
+ST03-002,Angelo's Geara Zulu | AMS-129,Unit,red,4,3,3,3,Neo Zeon,support:2,Angelo Sauper,,0,0,,ST03,,[Activate Main] <Support 2>
+ST03-003,Geara Zulu | AMS-129,Unit,red,3,2,3,2,Neo Zeon,,Neo Zeon (Trait),,0,0,,ST03,,None
+ST03-004,Gaza D (Sleeves) | AMX-006,Unit,red,2,2,2,1,Neo Zeon,support:2,,,0,0,,ST03,,[Activate Main] <Support 2>
+ST03-005,Dra-C (Sleeves) | MS-21C,Unit,red,1,1,1,2,Neo Zeon,,,,0,0,,ST03,,None
+ST03-006,Char's Zaku II | MS-06S,Unit,green,3,2,3,2,Zeon,deploy_draw:1,Char Aznable,,0,0,,ST03,,[Destroyed] Look at the top 3 cards of your deck. You may reveal 1 (Zeon)/(Neo Zeon) Unit card among them and add it to your hand. Return the remaining cards randomly to the bottom of your deck.
+ST03-007,Zaku I | MS-05,Unit,green,1,1,1,2,Zeon,,,,0,0,,ST03,,None
+ST03-008,Zaku II | MS-06,Unit,green,2,1,1,2,Zeon,,,,0,0,,ST03,,[Attack] This Unit gets AP+2 during this turn.
+ST03-009,Gouf | MS-078,Unit,green,3,3,2,3,Zeon,deploy,Rambo Ral,,0,0,,ST03,,[Deploy] Deploy 1 rested [Zaku II]((Zeon)AP1*HP1) Unit token.
+ST03-010,Full Frontal,Pilot,red,6,1,0,0,"Neo Zeon,Cyber-Newtype",,,Full Frontal,2,2,,ST03,,[When Paired] You may deploy 1 (Neo Zeon)/(Zeon) Unit card this is Lv.4 or lower from your hand.
+ST03-011,Char Aznable,Pilot,green,3,1,0,0,"Zeon,Newtype",high_maneuver,,Char Aznable,1,1,,ST03,,"[Attack]During this turn, this Unit gets AP+1 and, if it is a Link Unit, it gains <High-Maneuver>"
+ST03-012,Indignation | Angelo Sauper,Command,red,2,1,1,0,Neo Zeon,timing:both,,Angelo Sauper,0,0,,ST03,,[Main] / [Action] Choose 1 friendly Unit. It gets AP+2 during this turn.
+ST03-013,Close Combat,Command,red,2,2,0,0,,"ping,timing:both",,,0,0,,ST03,,[Main] / [Action] Choose 1 enemy Unit. Deal 2 damage to it.
+ST03-014,The Blue Giant | Ramba Ral,Command,green,4,1,1,1,Zeon,timing:action,,Ramba Ral,0,0,,ST03,,[Action] Choose 1 friendly Unit. It can't receive battle damage from enemy Units with 2 or less AP during this battle.
+ST03-015,Rewloola,Base,red,3,2,0,5,"Neo Zeon,Warship",ping,,,0,0,,ST03,,"Then, choose 1 enemy Unit with 5 or less AP. Deal 1 damage to it"
+ST03-016,Falmel,Base,green,3,2,0,5,"Zeon,Warship",,,,0,0,,ST03,,"Then, if it is your turn, deploy 1 rested [Char's Zaku II]((Zeon)AP3*HP1) Unit token."
+ST04-001,Aile Strike Gundam | GAT-X105+AQM/E-X01,Unit,white,5,4,4,4,Earth Alliance,blocker,Kira Yamato,,0,0,,ST04,,[When Paired Lv.4 or Higher Pilot] Choose 1 enemy Unit with 4 or less HP. Return it to its owner's hand.
+ST04-002,Strike Gundam | GAT-X105,Unit,white,4,2,3,3,Earth Alliance,deploy_draw:1,Kira Yamato,,0,0,,ST04,,"[Deploy] Draw 1. Then, discard 1."
+ST04-003,Moebius Zero | TS-MA2mod 00,Unit,white,3,2,2,4,Earth Alliance,,Mu La Flaga,,0,0,,ST04,,None
+ST04-004,Moebius | TS-MA2,Unit,white,1,1,1,1,Earth Alliance,blocker,,,0,0,,ST04,,None
+ST04-005,Strike Dagger | GAT-01,Unit,white,2,2,3,2,Earth Alliance,,,,0,0,,ST04,,None
+ST04-006,Aegis Gundam | GAT-X303,Unit,red,4,3,4,3,ZAFT,ping,Athrun Zala,,0,0,,ST04,,"[Attack] If this Unit has 5 or more AP, choose 1 enemy Unit that is Lv. 5 or higher. Deal 3 damage to it."
+ST04-007,Aegis Gundam | GAT-X303 (MA Mode),Unit,red,4,3,3,4,ZAFT,breach:3,Athrun Zala,,0,0,,ST04,,None
+ST04-008,Ginn | ZGMF-1017,Unit,red,2,1,2,2,ZAFT,,,,0,0,,ST04,,None
+ST04-009,Miguel's Ginn | ZGMF-1017,Unit,red,2,2,3,1,ZAFT,when_paired_draw:1,Miguel Ayman,,0,0,,ST04,,"[During Pair] [Destroyed] If you have another Link Unit in play, draw 1."
+ST04-010,Kira Yamato,Pilot,white,4,1,0,0,"Earth Alliance,Coordinator",,,Kira Yamato,2,1,,ST04,,[Attack] Choose 1 enemy Unit. It gets AP-2 during this battle.
+ST04-011,Athrun Zala,Pilot,red,4,1,0,0,"ZAFT,Coordinator",,,Athrun Zala,1,2,,ST04,,"[When linked] If this is a Link Unit, during this turn, it may choose an active enemy Unit that is Lv.5 or lower as its attack target."
+ST04-012,Striker Pack,Command,white,4,2,0,0,,timing:main,,,0,0,,ST04,,"[Main] If you have no (Earth Alliance) Unit tokens in play, deploy 1 [Sword Strike Gundam]]((Earth Alliance)-AP4-HP2-<Blocker>) or 1 [Launcher Strike Gundam]]((Earth Alliance)-AP2-HP4-<Blocker>) Unit token."
+ST04-013,Hawk of Endymion | Mu La Flaga,Command,white,2,1,1,0,Earth Alliance,timing:both,,Mu La Flaga,0,0,,ST04,,[Main]/[Action] Choose 1 enemy Unit 3 or less HP. Return it to it's owner's hand.
+ST04-014,The Magic Bullet of Dusk | Miguel Ayman,Command,red,3,1,0,1,"ZAFT,Coordinator","first_strike,timing:both",,Miguel Ayman,0,0,,ST04,,[Main]/[Action] Choose 1 friendly Unit that is LV.2 or lower. It gains <First Strike> during this turn.
+ST04-015,Archangel,Base,white,3,1,0,5,"Earth Alliance,Warship",,,,0,0,,ST04,,[Activate Main] [Once per Turn] 2 : Choose 1 friendly Unit with <Blocker>. Set it as active. It can't attack during this turn.
+ST04-016,Vesalius,Base,red,3,1,0,5,"ZAFT,Warship",,,,0,0,,ST04,,[Activate Main] Rest this Base : Choose 1 friendly Unit. It gets AP+1 during this turn.
+ST05-001,Gundam Barbatos 4th Form | ASW-G-08,Unit,purple,6,4,4,5,"Tekkadan,Gundam Frame","deploy,ping",Mikazuki Augus,,0,0,,ST05,,"[Deploy] Choose 1 of your other Units. Deal 1 damage to it. It gets AP+1 during this turn. While this is damaged, it gains <Suppression>."
+ST05-002,Gundam Barbatos 2nd Form | ASW-G-08,Unit,purple,4,2,2,4,"Tekkadan,Gundam Frame",,Mikazuki Augus,,0,0,,ST05,,"While this Unit is Damaged, it gets AP+2"
+ST05-003,CGS Mobile Worker | TK-S3,Unit,purple,1,1,0,2,Tekkadan,,,,0,0,,ST05,,[Activate Main] Rest this Unit: Choose 1 of your Units. Deal 1 damage to it. It gets AP+1 during this turn.
+ST05-004,Graze Custom | EB-06/tc,Unit,purple,2,1,2,2,Tekkadan,,,,0,0,,ST05,,None
+ST05-005,Gundam Gusion Rebake | ASW-G-11,Unit,purple,4,3,3,4,"Tekkadan,Gundam Frame",,Akihiro Altland,,0,0,,ST05,,[Destroyed] Choose 1 enemy Unit with 4 or less AP. Rest it.
+ST05-006,Hyakuren | STH-05,Unit,purple,3,2,4,3,Teiwaz,,,,0,0,,ST05,,None
+ST05-007,McGillis' Schwalbe Graze | EB-05s,Unit,white,4,3,4,2,Gjallarhorn,blocker,McGillis Fareed,,0,0,,ST05,,[When Paired] Choose 1 enemy Unit that is Lv.3 or lower. It gets AP-2 during this turn.
+ST05-008,Graze Commander Type | EB-06s,Unit,white,3,2,3,2,Gjallarhorn,blocker,Gjallarhorn (Trait),,0,0,,ST05,,None
+ST05-009,Graze | EB-06,Unit,white,2,1,2,2,Gjallarhorn,,,,0,0,,ST05,,None
+ST05-010,Mikazuki Augus,Pilot,purple,4,1,0,0,"Tekkadan,Alaya-Vijnana",ping,,Mikazuki Augus,2,1,,ST05,,[When Paired] Choose 1 of your Units and 1 enemy Unit. Deal 1 damage to them.
+ST05-011,Akihiro Altland,Pilot,purple,3,1,0,0,"Tekkadan,Alaya-Vijnana",deploy_draw:1,,Akihiro Altland,1,1,,ST05,,"[During Link] During your turn, when this Unit destroys an enemy Unit with battle damage, choose 1 (Tekkadan) Unit card that is Lv.2 or lower from your trash. Add it to your hand."
+ST05-012,McGillis Fareed,Pilot,white,4,1,0,0,Gjallarhorn,,,McGillis Fareed,2,1,,ST05,,"[When Paired] If you have 2 or more other (Gjallarhorn)/(Tekkadan) Units in play, choose 1 enemy Unit with 3 or less HP. Rest it."
+ST05-013,With Iron and Blood,Command,purple,2,1,0,0,,timing:both,,,0,0,,ST05,,[Main]/[Action] Choose 1 of your Units. Deal 1 damage to it. It gets AP+3 during this turn.
+ST05-014,Fatal Strike,Command,purple,4,2,0,0,,"ping,timing:main",,,0,0,,ST05,,Choose 1 enemy Unit that is Lv.3 or lower. Destroy it.
+ST05-015,Isaribi,Base,purple,3,1,0,5,"Tekkadan,Warship",,,,0,0,,ST05,,[Activate Main] Rest this Base : Choose 1 of your damaged Units. It gets AP+2 during this turn.
+ST06-001,GQuuuuuuX (Omega Psycommu),Unit,red,5,3,4,4,Clan,first_strike,Amate Yuzuriha (Machu),,0,0,,ST06,,"[When Linked]If another friendly (Clan) Unit is in play, this gains <First Strike> during this turn"
+ST06-002,GQuuuuuuX (Omega Psycommu),Unit,red,4,3,4,2,Clan,"deploy,ping",Amate Yuzuriha (Machu),,0,0,,ST06,,"[Deploy]If another friendly (Clan) Unit is in play, choose 1 enemy Unit. Deal 1 damage to it."
+ST06-003,Gaia's Rick Dom (GQ),Unit,red,2,2,2,2,Clan,support:1,Gaia (GQ),,0,0,,ST06,,None
+ST06-004,Gelgoog (GQ),Unit,red,2,1,2,2,Zeon,,,,0,0,,ST06,,None
+ST06-005,Red Gundam,Unit,green,4,3,4,3,Clan,breach:1,Shuji Ito,,0,0,,ST06,,[Attack]Choose 1 to 2 friendly (Clan) Units. They get AP+2 during this turn.
+ST06-006,Red Gundam,Unit,green,4,2,3,4,Clan,,Shuji Ito,,0,0,,ST06,,None
+ST06-007,Ortega's Rick Dom (GQ),Unit,green,3,2,3,2,Clan,deploy,Ortega (GQ),,0,0,,ST06,,"[Deploy]Choose 1 of your other (Clan) Units. During this turn, it may choose an active enemy Unit with 3 or less AP as its attack target."
+ST06-008,Sugai's Gelgoog (GQ),Unit,green,3,2,3,3,Clan,,Clan (Trait),,0,0,,ST06,,None
+ST06-009,Amate Yuzuriha (Machu),Pilot,red,4,1,0,0,"Clan,Newtype",deploy_draw:1,,Amate Yuzuriha (Machu),2,1,,ST06,,"[When Linked]Look at the top card of your deck. If it is a (Clan) card, you may reveal it and add it to your hand. Return any remaining card to the bottom of your deck."
+ST06-010,Shuji Ito,Pilot,green,4,1,0,0,"Clan,Newtype",,,Shuji Ito,1,2,,ST06,,"[During Link][Attack]If you have a (Clan) Unit in play, look at the top card of your deck. Return it to the top or bottom of your deck."
+ST06-011,Ruthless Tactics | Gaia (GQ),Command,red,3,1,1,0,Clan,timing:both,,Gaia (GQ),0,0,,ST06,,[Main]/[Action]Choose 1 to 2 friendly (Clan) Units. They get AP+2 during this turn. [Pilot][Gaia (GQ)]
+ST06-012,Schoolgirl and Smuggler,Command,green,1,1,0,0,,"deploy_draw:1,timing:main",,,0,0,,ST06,,[Main]Look at the top 3 cards of your deck. You may reveal 1 (Clan) Unit card/Pilot card among them and add it to your hand. Return the remaining cards randomly to the bottom of your deck.
+ST06-013,Fierce Unity | Ortega (GQ),Command,green,3,1,1,0,Clan,timing:action,,Ortega (GQ),0,0,,ST06,,[Action]Choose 1 to 2 friendly (Clan) Units. They can't receive battle damage from enemy Units that are Lv.2 or lower during this turn. [Pilot][Ortega (GQ)]
+ST06-014,Clan Battle,Base,red,3,1,0,5,"Clan,Stronghold",,,,0,0,,ST06,,"[Activate･Main]Rest this Base：If a friendly (Clan) Link Unit is in play, choose 1 friendly Unit. It gets AP+2 during this turn."
+ST06-015,"Kaneban Co., Ltd.",Base,green,4,2,0,5,"Clan,Stronghold",breach:3,,,0,0,,ST06,,"[Once per Turn]When a friendly (Clan) Unit links, it gains <Breach 3> during this turn. (When this Unit's attack destroys an enemy Unit, deal the specified amount of damage to the first card in that opponent's shield area.)"
