@@ -1,18 +1,127 @@
 """
-Sample Gundam Card Database
-Based on the Gundam Card Game comprehensive rules.
-Covers Blue (Earth Federation), Red (Zeon), Green (AEUG/Kalaba),
-White (Celestial Being), and Purple (misc/multi).
+Gundam Card Database
+====================
+Loads real card data from gundam_cards.csv (produced by scrape_cards.py)
+when present in the same directory. Falls back to built-in sample cards
+so the app works out-of-the-box without scraping.
 
-Effects dict keys:
-  blocker, first_strike, support:int, breach:int, repair:int,
-  high_maneuver, suppression, burst:str, deploy_draw:int,
-  when_paired_draw:int, destroyed_draw:int,
-  timing: "main" | "action" | "both",
-  draw:int, deal_damage:int, destroy_unit:bool, rest_enemy:bool
+To get real data:
+    pip install requests
+    python scrape_cards.py          # creates gundam_cards.csv
+Then relaunch the app — it will automatically use the real cards.
 """
 
-from engine import CardTemplate
+import csv
+import os
+import re
+from pathlib import Path
+
+
+def _safe_int(val, default: int = 0) -> int:
+    try:
+        return int(str(val).strip())
+    except (TypeError, ValueError):
+        return default
+
+
+def _parse_effects_str(s: str) -> dict:
+    """Parse 'blocker,support:2,repair:1,timing:main' back into a dict."""
+    effects = {}
+    if not s or str(s).strip() in ("", "nan"):
+        return effects
+    for part in str(s).split(","):
+        part = part.strip()
+        if not part:
+            continue
+        if ":" in part:
+            k, v = part.split(":", 1)
+            k, v = k.strip(), v.strip()
+            try:
+                effects[k] = int(v)
+            except ValueError:
+                effects[k] = v
+        else:
+            effects[part] = True
+    return effects
+
+
+def _parse_list_field(s: str) -> list:
+    """Parse comma-separated string into list, filtering blanks/nan."""
+    if not s or str(s).strip() in ("", "nan"):
+        return []
+    return [x.strip() for x in str(s).split(",") if x.strip() and x.strip() != "nan"]
+
+
+def load_cards_from_csv(csv_path: str | Path) -> list:
+    """
+    Load CardTemplate objects from a CSV file produced by scrape_cards.py.
+    Returns a list of CardTemplate objects, or [] on failure.
+    """
+    # Import here to avoid circular import
+    from engine import CardTemplate  # type: ignore
+
+    path = Path(csv_path)
+    if not path.exists():
+        return []
+
+    cards = []
+    try:
+        with open(path, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                # Normalise column names (strip whitespace, lowercase)
+                row = {k.lower().strip(): v for k, v in row.items()}
+
+                colors = _parse_list_field(row.get("colors", "").replace("/", ","))
+                if not colors:
+                    colors = ["blue"]
+
+                card = CardTemplate(
+                    card_number    = str(row.get("card_number", "")).strip(),
+                    card_name      = str(row.get("card_name", "")).strip(),
+                    card_type      = str(row.get("card_type", "")).strip(),
+                    colors         = colors,
+                    lv             = _safe_int(row.get("lv", 0)),
+                    cost           = _safe_int(row.get("cost", 0)),
+                    ap             = _safe_int(row.get("ap", 0)),
+                    hp             = _safe_int(row.get("hp", 0)),
+                    traits         = _parse_list_field(row.get("traits", "")),
+                    effects        = _parse_effects_str(row.get("effects", "")),
+                    link_conditions= _parse_list_field(row.get("link_conditions", "")),
+                    pilot_name     = str(row.get("pilot_name", "")).strip(),
+                    pilot_ap       = _safe_int(row.get("pilot_ap", 0)),
+                    pilot_hp       = _safe_int(row.get("pilot_hp", 0)),
+                )
+                if card.card_number and card.card_name:
+                    cards.append(card)
+    except Exception as e:
+        print(f"[cards.py] Warning: failed to load {csv_path}: {e}")
+        return []
+
+    return cards
+
+
+# ── Auto-detect real card CSV next to this file ──
+_THIS_DIR   = Path(__file__).parent
+_REAL_CSV   = _THIS_DIR / "gundam_cards.csv"
+REAL_CARDS_LOADED = False
+REAL_ALL_CARDS: list = []
+
+if _REAL_CSV.exists():
+    _loaded = load_cards_from_csv(_REAL_CSV)
+    if _loaded:
+        REAL_ALL_CARDS = _loaded
+        REAL_CARDS_LOADED = True
+        print(f"[cards.py] Loaded {len(REAL_ALL_CARDS)} real cards from {_REAL_CSV.name}")
+
+
+
+# ─────────────────────────────────────────────
+#  SAMPLE CARD DATA (fallback when no CSV is present)
+# ─────────────────────────────────────────────
+
+
+from engine import CardTemplate  # noqa
 
 # ─────────────────────────────────────────────
 #  RESOURCE CARDS (10 per color for sample decks)
@@ -505,3 +614,35 @@ PRESET_DECKS = {
     "AEUG / Kalaba (Green)": build_preset_green_deck,
     "Celestial Being (White)": build_preset_white_deck,
 }
+
+
+# ─────────────────────────────────────────────
+#  UNIFIED CARD ACCESS
+# ─────────────────────────────────────────────
+
+def get_all_cards() -> list:
+    """
+    Returns real cards (from gundam_cards.csv) if the scraper has been run,
+    otherwise returns the built-in sample cards.
+    """
+    if REAL_CARDS_LOADED and REAL_ALL_CARDS:
+        return REAL_ALL_CARDS
+    return ALL_CARDS
+
+
+def get_card_lookup() -> dict:
+    cards = get_all_cards()
+    return {c.card_number: c for c in cards}
+
+
+def get_resource_cards() -> list:
+    cards = get_all_cards()
+    return [c for c in cards if c.card_type == "Resource"]
+
+
+def using_real_data() -> bool:
+    return REAL_CARDS_LOADED and bool(REAL_ALL_CARDS)
+
+
+def real_card_count() -> int:
+    return len(REAL_ALL_CARDS) if REAL_CARDS_LOADED else 0
