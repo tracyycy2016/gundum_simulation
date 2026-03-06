@@ -20,6 +20,8 @@ import streamlit as st
 
 from engine import GameEngine, validate_deck
 from cards import (
+    get_all_cards, get_card_lookup, get_resource_cards,
+    using_real_data, real_card_count, load_cards_from_csv,
     ALL_CARDS, CARD_LOOKUP, CARD_NAME_LOOKUP, RESOURCES,
     PRESET_DECKS, CardTemplate
 )
@@ -92,6 +94,53 @@ st.markdown("""
   <p>Rules: Comprehensive Rules Ver. 1.5.0 &nbsp;|&nbsp; Build decks · Validate · Simulate battles</p>
 </div>
 """, unsafe_allow_html=True)
+
+
+# ─────────────────────────────────────────────
+#  DATA SOURCE BANNER + CSV UPLOAD
+# ─────────────────────────────────────────────
+
+# Allow uploading a real card CSV directly on the main page
+with st.expander("📂 Load Real Card Data (gundam_cards.csv)", expanded=not using_real_data()):
+    if using_real_data():
+        st.success(f"✅ **Real card data loaded** — {real_card_count()} cards from `gundam_cards.csv`")
+        st.caption(
+            "Data sourced from apitcg.com. Re-run `scrape_cards.py` anytime to refresh."
+        )
+    else:
+        st.warning(
+            "⚠️ Using **built-in sample cards** (fake stats). "
+            "Run the scraper to load real card data."
+        )
+        st.markdown("""
+        **To load real cards:**
+        1. Run: `pip install requests` then `python scrape_cards.py`
+        2. This creates `gundam_cards.csv` next to `app.py`
+        3. **Or** upload the CSV file here:
+        """)
+        uploaded_csv = st.file_uploader(
+            "Upload gundam_cards.csv", type=["csv"], key="global_csv_upload",
+            label_visibility="collapsed"
+        )
+        if uploaded_csv:
+            import tempfile, shutil
+            tmp = Path(tempfile.mktemp(suffix=".csv"))
+            tmp.write_bytes(uploaded_csv.read())
+            loaded = load_cards_from_csv(tmp)
+            if loaded:
+                import cards as _cards_module
+                _cards_module.REAL_ALL_CARDS = loaded
+                _cards_module.REAL_CARDS_LOADED = True
+                st.success(f"✅ Loaded {len(loaded)} cards! Please refresh the page.")
+                st.rerun()
+            else:
+                st.error("Failed to parse CSV. Check the format matches the template.")
+
+if using_real_data():
+    st.info(f"🃏 **{real_card_count()} real cards loaded** from `gundam_cards.csv` (via apitcg.com)")
+else:
+    st.warning("🎲 Using **sample card data** — run `scrape_cards.py` for real stats.")
+
 
 # ─────────────────────────────────────────────
 #  HELPER FUNCTIONS
@@ -285,7 +334,7 @@ with tab_catalog:
 
     name_search = st.text_input("🔍 Search by name or trait", "")
 
-    filtered = ALL_CARDS
+    filtered = get_all_cards()
     if type_filter:
         filtered = [c for c in filtered if c.card_type in type_filter]
     if color_filter:
@@ -363,7 +412,7 @@ def deck_builder_ui(deck_slot: str, label: str, color_accent: str):
         with col3:
             fname = st.text_input("Search", key=f"{deck_slot}_fname")
 
-        pool = [c for c in ALL_CARDS if c.card_type != "Resource"]
+        pool = [c for c in get_all_cards() if c.card_type != "Resource"]
         if ftype:
             pool = [c for c in pool if c.card_type in ftype]
         if fcolor:
@@ -383,8 +432,9 @@ def deck_builder_ui(deck_slot: str, label: str, color_accent: str):
                 added = 0
                 for sel in selected_indices:
                     card_num = sel.split(" — ")[0]
-                    if card_num in CARD_LOOKUP:
-                        card = CARD_LOOKUP[card_num]
+                    _cl = get_card_lookup()
+                if card_num in _cl:
+                        card = _cl[card_num]
                         existing_count = sum(1 for c in st.session_state[deck_slot] if c.card_number == card_num)
                         can_add = min(copies, 4 - existing_count)
                         if can_add > 0:
@@ -395,7 +445,7 @@ def deck_builder_ui(deck_slot: str, label: str, color_accent: str):
 
         st.divider()
         st.markdown("**Step 2 — Add Resource Cards**")
-        res_pool = [c for c in ALL_CARDS if c.card_type == "Resource"]
+        res_pool = get_resource_cards()
         res_selected = st.multiselect(
             "Select resource cards",
             options=[f"{c.card_number} — {c.card_name}" for c in res_pool],
@@ -405,8 +455,9 @@ def deck_builder_ui(deck_slot: str, label: str, color_accent: str):
         if st.button("➕ Add Resources", key=f"{deck_slot}_add_res"):
             for sel in res_selected:
                 card_num = sel.split(" — ")[0]
-                if card_num in CARD_LOOKUP:
-                    card = CARD_LOOKUP[card_num]
+                _cl = get_card_lookup()
+            if card_num in _cl:
+                    card = _cl[card_num]
                     st.session_state[rdeck_slot] += [card] * res_copies
             st.success("Resources added.")
 
