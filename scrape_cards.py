@@ -1,30 +1,24 @@
 #!/usr/bin/env python3
 """
-Gundam Card Game — Card Data Scraper  (v2)
-==========================================
-Scrapes real card data from the official Gundam Card Game website
-(www.gundam-gcg.com) using Selenium, since the site is JavaScript-rendered.
+Gundam Card Game — Card Data Scraper  (v3, Playwright)
+=======================================================
+Uses Playwright instead of Selenium — works out of the box in GitHub
+Codespaces, Google Colab, and any Linux environment without needing
+a system Chrome install.
 
 HOW TO INSTALL & RUN
 ---------------------
-1.  pip install selenium webdriver-manager
-2.  Python 3.8+ required
-3.  Google Chrome must be installed (or Firefox — see --browser flag)
-4.  Run:
-        python scrape_cards.py                        # all sets, Asia-EN
-        python scrape_cards.py --sets GD01 GD02       # specific sets only
-        python scrape_cards.py --browser firefox      # use Firefox instead
-        python scrape_cards.py --headless false       # watch the browser work
-        python scrape_cards.py --out my_cards.csv     # custom output path
+    pip install playwright
+    playwright install chromium
+    playwright install-deps chromium
 
-The output CSV is directly importable into the Gundam Card Game Simulator app.
+    python scrape_cards.py                     # all sets
+    python scrape_cards.py --sets GD01 ST01    # specific sets only
+    python scrape_cards.py --out my_cards.csv  # custom output path
+    python scrape_cards.py --headed            # show browser window (local only)
+    python scrape_cards.py --delay 1.2         # slower clicks (if getting blocked)
 
-NOTES
-------
-- Uses Selenium to execute JavaScript on the official site.
-- Clicks every card thumbnail, reads the detail panel, and extracts stats.
-- Expected runtime: ~3-8 minutes for a full card pool.
-- If it fails mid-way, re-run with --sets to retry specific sets.
+Output: gundam_cards.csv  — drop next to app.py, simulator auto-loads it.
 """
 
 import argparse
@@ -39,32 +33,14 @@ from pathlib import Path
 #  DEPENDENCY CHECK
 # ─────────────────────────────────────────────
 
-def check_deps():
-    missing = []
-    for pkg, import_name in [("selenium", "selenium"), ("webdriver-manager", "webdriver_manager")]:
-        try:
-            __import__(import_name)
-        except ImportError:
-            missing.append(pkg)
-    if missing:
-        print("Missing dependencies. Install them first:")
-        print(f"    pip install {' '.join(missing)}")
-        sys.exit(1)
-
-check_deps()
-
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.options import Options as ChromeOptions
-from selenium.webdriver.firefox.options import Options as FirefoxOptions
-from selenium.common.exceptions import TimeoutException, NoSuchElementException, StaleElementReferenceException
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.firefox import GeckoDriverManager
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.firefox.service import Service as FirefoxService
-
+try:
+    from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
+except ImportError:
+    print("Playwright not found. Run:")
+    print("    pip install playwright")
+    print("    playwright install chromium")
+    print("    playwright install-deps chromium")
+    sys.exit(1)
 
 # ─────────────────────────────────────────────
 #  CONFIGURATION
@@ -72,14 +48,11 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 
 BASE_URL = "https://www.gundam-gcg.com/asia-en/cards/"
 
-# All known sets — extend as new sets release
 ALL_SET_CODES = [
     "GD01", "GD02", "GD03",
     "ST01", "ST02", "ST03", "ST04", "ST05", "ST06", "ST07", "ST08",
 ]
 
-# ?package= query param for each set on the official site.
-# Find these by clicking each set filter on the site and reading the URL.
 SET_PACKAGE_IDS = {
     "GD01": "619097",
     "GD02": "619098",
@@ -94,9 +67,6 @@ SET_PACKAGE_IDS = {
     "ST08": "619107",
 }
 
-WAIT_TIMEOUT = 15
-CLICK_DELAY  = 0.9
-
 CSV_COLUMNS = [
     "card_number", "card_name", "card_type", "colors",
     "lv", "cost", "ap", "hp",
@@ -105,6 +75,7 @@ CSV_COLUMNS = [
     "rarity", "set_id", "zone", "effect_raw",
 ]
 
+CLICK_DELAY = 0.9   # seconds between card clicks
 
 # ─────────────────────────────────────────────
 #  EFFECT PARSING
@@ -149,10 +120,12 @@ def parse_effects(raw, card_type):
         return ""
     text = clean_html(raw)
     effects = {}
+
     for kw, pat in KEYWORD_PATTERNS:
         m = re.search(pat, text, re.IGNORECASE | re.DOTALL)
         if m:
             effects[kw] = int(m.group(1)) if m.lastindex else True
+
     if card_type.upper() == "COMMAND":
         has_main   = bool(re.search(r"【Main】",   text))
         has_action = bool(re.search(r"【Action】", text))
@@ -162,18 +135,23 @@ def parse_effects(raw, card_type):
             m = re.search(ep, text, re.IGNORECASE | re.DOTALL)
             if m:
                 effects[ek] = int(m.group(1)) if m.lastindex else True
+
     if re.search(r"【Burst】", text):
-        if re.search(r"[Dd]raw\s*2", text):    effects["burst"] = "draw2"
-        elif re.search(r"[Dd]raw\s*1", text):  effects["burst"] = "draw1"
-        elif re.search(r"[Dd]eploy|place.*deck", text, re.I): effects["burst"] = "deploy_top"
+        if   re.search(r"[Dd]raw\s*2",         text): effects["burst"] = "draw2"
+        elif re.search(r"[Dd]raw\s*1",         text): effects["burst"] = "draw1"
+        elif re.search(r"[Dd]eploy|place.*deck",text, re.I): effects["burst"] = "deploy_top"
         elif re.search(r"[Rr]ecover|[Hh]eal",  text): effects["burst"] = "heal_base"
         else: effects["burst"] = "draw1"
-    return ",".join(f"{k}:{v}" if v is not True else k for k, v in effects.items() if v is not False)
+
+    return ",".join(
+        f"{k}:{v}" if v is not True else k
+        for k, v in effects.items() if v is not False
+    )
 
 
 def safe_int(v, d=0):
     try:
-        return int(str(v).strip())
+        return int(str(v).strip().lstrip("+"))
     except:
         return d
 
@@ -195,54 +173,16 @@ def parse_pilot_stats(effect_text):
 
 
 # ─────────────────────────────────────────────
-#  BROWSER
+#  PAGE SCRAPING WITH PLAYWRIGHT
 # ─────────────────────────────────────────────
 
-def make_driver(browser="chrome", headless=True):
-    if browser == "chrome":
-        opts = ChromeOptions()
-        if headless:
-            opts.add_argument("--headless=new")
-        opts.add_argument("--no-sandbox")
-        opts.add_argument("--disable-dev-shm-usage")
-        opts.add_argument("--window-size=1400,900")
-        opts.add_argument("--lang=en-US")
-        opts.add_experimental_option("excludeSwitches", ["enable-automation"])
-        svc = ChromeService(ChromeDriverManager().install())
-        return webdriver.Chrome(service=svc, options=opts)
-    else:
-        opts = FirefoxOptions()
-        if headless:
-            opts.add_argument("--headless")
-        svc = FirefoxService(GeckoDriverManager().install())
-        return webdriver.Firefox(service=svc, options=opts)
-
-
-# ─────────────────────────────────────────────
-#  SCRAPING — card list + detail panel
-# ─────────────────────────────────────────────
-
-def get_card_number_from_img(driver):
-    """Extract card number from the detail image src, e.g. GD01-001."""
-    try:
-        imgs = driver.find_elements(By.CSS_SELECTOR, ".detail img, [class*='detail'] img, [class*='card'] img")
-        for img in imgs:
-            src = img.get_attribute("src") or ""
-            m = re.search(r"([A-Z]{2,4}\d{2}-\d{3}[a-z]?)", src)
-            if m:
-                return m.group(1)
-    except:
-        pass
-    return ""
-
-
-def get_text(driver, selectors):
-    """Try a list of CSS selectors, return first non-empty text found."""
+def get_text_by_selectors(page, selectors):
+    """Try each selector in order, return first non-empty text."""
     for sel in selectors:
         try:
-            els = driver.find_elements(By.CSS_SELECTOR, sel)
-            for el in els:
-                t = el.text.strip()
+            el = page.locator(sel).first
+            if el.count() > 0 and el.is_visible():
+                t = el.inner_text().strip()
                 if t:
                     return t
         except:
@@ -250,102 +190,107 @@ def get_text(driver, selectors):
     return ""
 
 
-def scrape_card_detail(driver):
+def extract_card_number_from_src(src):
+    """Pull card number like GD01-001 from an image URL."""
+    m = re.search(r"([A-Z]{2,4}\d{2}-\d{3}[a-z]?)", src or "")
+    return m.group(1) if m else ""
+
+
+def scrape_card_panel(page):
     """
-    After a card has been clicked (detail panel visible), extract all fields.
+    After clicking a card thumbnail, read all visible card detail fields.
+    The official site shows a detail overlay/panel with the card stats.
     Returns a raw dict or None.
     """
-    time.sleep(0.25)  # let panel animate in
+    time.sleep(CLICK_DELAY)
 
-    # Confirm a detail panel is visible
-    detail_selectors = [
-        ".cardDetail", ".card-detail", "[class*='detail']",
-        ".modal", "[class*='modal']", ".popup", "[class*='popup']",
-    ]
-    panel = None
-    for sel in detail_selectors:
+    # Wait for any kind of detail element to appear
+    detail_appeared = False
+    for sel in [".cardDetail", ".card-detail", "[class*='detail']",
+                ".modal", "[class*='modal']", ".popup"]:
         try:
-            els = driver.find_elements(By.CSS_SELECTOR, sel)
-            for el in els:
-                if el.is_displayed():
-                    panel = el
-                    break
-        except:
-            pass
-        if panel:
+            page.wait_for_selector(sel, state="visible", timeout=4000)
+            detail_appeared = True
             break
+        except PWTimeout:
+            continue
 
-    # Card number from image URL (most reliable)
-    card_number = get_card_number_from_img(driver)
+    # Even if no panel found, try to read whatever's on screen
+    # Card number — most reliable from the card image URL
+    card_number = ""
+    try:
+        imgs = page.locator("img").all()
+        for img in imgs:
+            src = img.get_attribute("src") or ""
+            num = extract_card_number_from_src(src)
+            if num:
+                card_number = num
+                break
+    except:
+        pass
 
-    # --- Try to extract each field using multiple selector strategies ---
+    # ── Field extraction: try many selector patterns ──
+    # The official site uses Japanese-style class names; we cast a wide net.
 
-    # Name
-    card_name = get_text(driver, [
+    def txt(*selectors):
+        return get_text_by_selectors(page, list(selectors))
+
+    card_name = txt(
         ".cardDetail .name", ".card-detail .name",
-        "[class*='detail'] [class*='name']",
-        "[class*='cardName']", ".modal h2", ".popup h2",
+        "[class*='cardName']", "[class*='card-name']",
         "[class*='detail'] h2", "[class*='detail'] h3",
-    ])
-
-    # Card type
-    card_type = get_text(driver, [
-        "[class*='cardType']", "[class*='card-type']", "[class*='type']",
-        "td.type", "dt:contains('Type') + dd",
-    ])
-
-    # Color
-    color = get_text(driver, [
-        "[class*='color']", "[class*='colour']",
-        "td.color", "[class*='detail'] .color",
-    ])
-
-    # Level
-    lv = get_text(driver, ["[class*='lv']","[class*='level']","td.lv","td.level"])
-
-    # Cost
-    cost = get_text(driver, ["[class*='cost']","td.cost"])
-
-    # AP
-    ap = get_text(driver, ["[class*='ap']","td.ap","[class*='attack']"])
-
-    # HP
-    hp = get_text(driver, ["[class*='hp']","td.hp","[class*='health']"])
-
-    # Trait
-    trait = get_text(driver, ["[class*='trait']","td.trait","[class*='attribute']"])
-
-    # Link condition
-    link = get_text(driver, ["[class*='link']","td.link"])
-
-    # Rarity
-    rarity = get_text(driver, ["[class*='rarity']","td.rarity",".rarity"])
-
-    # Zone
-    zone = get_text(driver, ["[class*='zone']","td.zone"])
-
-    # Effect text — grab all effect-like text blocks
-    effect_els = []
-    for sel in ["[class*='effect']","[class*='ability']","[class*='text']","td.effect"]:
-        try:
-            effect_els.extend(driver.find_elements(By.CSS_SELECTOR, sel))
-        except:
-            pass
-    effect_raw = "\n".join(
-        el.get_attribute("innerHTML") or el.text
-        for el in effect_els
-        if el.is_displayed() and el.text.strip()
+        ".modal h2", ".popup h2",
     )
 
-    # If we got almost nothing, try reading the page source for structured data
+    card_type = txt(
+        "[class*='cardType']", "[class*='card-type']",
+        "[class*='category']", "td.type",
+    )
+
+    color = txt(
+        "[class*='color']:not([class*='background'])",
+        "[class*='colour']", "td.color",
+    )
+
+    lv   = txt("[class*='lv']:not([class*='level-bar'])", "[class*='level']", "td.lv", "td.level")
+    cost = txt("[class*='cost']", "td.cost")
+    ap   = txt("[class*=':ap']", "[class*='_ap']", "[class*='-ap']", "td.ap", "[class*='attack']")
+    hp   = txt("[class*=':hp']", "[class*='_hp']", "[class*='-hp']", "td.hp", "[class*='health']")
+
+    trait = txt("[class*='trait']", "[class*='attribute']", "td.trait")
+    link  = txt("[class*='link']", "td.link")
+    rarity = txt("[class*='rarity']", "td.rarity", ".rarity")
+    zone   = txt("[class*='zone']", "td.zone")
+
+    # Effect text: grab innerHTML from effect-like containers, clean later
+    effect_raw = ""
+    for sel in ["[class*='effect']", "[class*='ability']",
+                "[class*='skillText']", "[class*='skill-text']",
+                "[class*='cardText']", "td.effect"]:
+        try:
+            els = page.locator(sel).all()
+            parts = []
+            for el in els:
+                if el.is_visible():
+                    html = el.inner_html()
+                    if html.strip():
+                        parts.append(html)
+            if parts:
+                effect_raw = "\n".join(parts)
+                break
+        except:
+            pass
+
+    # If we got almost nothing useful, return None to skip
     if not card_name and not card_number:
         return None
 
-    # Infer card number from name if not found in image
+    # Infer card number from text if image didn't have it
     if not card_number:
-        card_number = get_text(driver, [
-            "[class*='number']","[class*='cardNo']","[class*='card-no']","td.no",
-        ])
+        card_number = txt(
+            "[class*='number']", "[class*='cardNo']",
+            "[class*='card-no']", "td.no",
+        )
 
     return {
         "card_number": card_number,
@@ -364,96 +309,72 @@ def scrape_card_detail(driver):
     }
 
 
-def close_detail_panel(driver):
-    """Try to close the card detail panel before clicking the next card."""
-    for sel in [".close", ".btn-close", "[class*='close']", ".modal-close"]:
+def close_panel(page):
+    """Try to dismiss the card detail panel."""
+    for sel in [".close", ".btn-close", "[class*='close']",
+                ".modal-close", "[aria-label='close']"]:
         try:
-            els = driver.find_elements(By.CSS_SELECTOR, sel)
-            for el in els:
-                if el.is_displayed():
-                    el.click()
-                    time.sleep(0.3)
-                    return
+            el = page.locator(sel).first
+            if el.is_visible():
+                el.click()
+                time.sleep(0.3)
+                return
         except:
             pass
-    # Fallback: press Escape
     try:
-        from selenium.webdriver.common.keys import Keys
-        driver.find_element(By.TAG_NAME, "body").send_keys(Keys.ESCAPE)
+        page.keyboard.press("Escape")
         time.sleep(0.3)
     except:
         pass
 
 
-def scrape_set(driver, set_code, package_id):
+def scrape_set(page, set_code, package_id):
     url = f"{BASE_URL}?package={package_id}"
     print(f"\n[{set_code}] {url}")
-    driver.get(url)
-
-    # Wait for cards to load
-    for sel in ["ul li img", ".card-list li", "[class*='card'] img", "li img"]:
-        try:
-            WebDriverWait(driver, 20).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, sel))
-            )
-            break
-        except TimeoutException:
-            continue
+    page.goto(url, wait_until="networkidle", timeout=30000)
     time.sleep(2)
 
-    # Gather clickable card elements
-    thumb_selectors = [
-        "ul li", ".card-list > li", "[class*='card-list'] li",
-        "[class*='cards'] li", ".list li",
-    ]
-    thumbs = []
-    for sel in thumb_selectors:
-        thumbs = driver.find_elements(By.CSS_SELECTOR, sel)
-        if thumbs:
-            break
-
-    if not thumbs:
-        print(f"  [WARN] No card thumbnails found for {set_code}")
+    # Find card thumbnail elements — the site renders a <ul> of <li> cards
+    thumb_sel = "ul li"
+    try:
+        page.wait_for_selector(thumb_sel, timeout=15000)
+    except PWTimeout:
+        print(f"  [WARN] No thumbnails found for {set_code}")
         return []
 
+    thumbs = page.locator(thumb_sel).all()
     print(f"  Found {len(thumbs)} thumbnails")
-    cards = []
 
+    cards = []
     for i in range(len(thumbs)):
         try:
-            # Re-fetch thumbs each iteration to avoid stale refs
-            thumbs = driver.find_elements(By.CSS_SELECTOR, thumb_selectors[0])
-            if i >= len(thumbs):
-                break
-            thumb = thumbs[i]
-            driver.execute_script("arguments[0].scrollIntoView({block:'center'});", thumb)
-            time.sleep(0.2)
+            # Re-query each time to avoid stale handles
+            thumb = page.locator(thumb_sel).nth(i)
+            thumb.scroll_into_view_if_needed()
+            time.sleep(0.15)
             thumb.click()
-            time.sleep(CLICK_DELAY)
 
-            detail = scrape_card_detail(driver)
+            detail = scrape_card_panel(page)
             if detail:
                 detail["set_id"] = set_code
                 cards.append(detail)
                 num  = detail.get("card_number", "?")
                 name = detail.get("card_name",   "?")
-                print(f"  [{i+1:3d}/{len(thumbs)}] {num:12s} {name}")
+                print(f"  [{i+1:3d}/{len(thumbs)}] {num:13s} {name}")
             else:
-                print(f"  [{i+1:3d}] (no detail extracted)")
+                print(f"  [{i+1:3d}/{len(thumbs)}] (skipped — no data extracted)")
 
-            close_detail_panel(driver)
-            time.sleep(0.3)
+            close_panel(page)
+            time.sleep(0.2)
 
-        except StaleElementReferenceException:
-            print(f"  [{i+1}] Stale element, skipping")
         except Exception as e:
-            print(f"  [{i+1}] Error: {e}")
+            print(f"  [{i+1:3d}] Error: {e}")
 
     return cards
 
 
 # ─────────────────────────────────────────────
-#  TRANSFORM + OUTPUT
+#  TRANSFORM RAW → CSV ROW
 # ─────────────────────────────────────────────
 
 def transform(raw):
@@ -462,38 +383,42 @@ def transform(raw):
     if not num and not name:
         return None
 
-    card_type_raw = (raw.get("card_type") or "").strip()
-    type_map = {"unit":"Unit","pilot":"Pilot","command":"Command","base":"Base","resource":"Resource"}
-    card_type = type_map.get(card_type_raw.lower(), card_type_raw.title() or "Unit")
+    ct_raw    = (raw.get("card_type") or "").strip()
+    type_map  = {"unit":"Unit","pilot":"Pilot","command":"Command",
+                 "base":"Base","resource":"Resource"}
+    card_type = type_map.get(ct_raw.lower(), ct_raw.title() or "Unit")
 
-    raw_color = raw.get("colors") or ""
-    colors = "/".join(c.strip().lower() for c in re.split(r"[/,&]", raw_color) if c.strip()) or "blue"
+    raw_color = (raw.get("colors") or "").strip()
+    colors    = "/".join(
+        c.strip().lower() for c in re.split(r"[/,& ]+", raw_color) if c.strip()
+    ) or "blue"
 
     trait_raw = raw.get("traits") or ""
     traits    = ",".join(re.findall(r"\(([^)]+)\)", trait_raw)) or trait_raw
 
-    link_raw = raw.get("link") or ""
-    link_str = ",".join(re.findall(r"\[([^\]]+)\]", link_raw)) or link_raw
+    link_raw  = raw.get("link") or ""
+    link_str  = ",".join(re.findall(r"\[([^\]]+)\]", link_raw)) or link_raw
 
     effect_raw = raw.get("effect_raw") or ""
-    effects    = parse_effects(effect_raw, card_type_raw)
+    effects    = parse_effects(effect_raw, ct_raw)
 
     pilot_ap, pilot_hp, pilot_name = 0, 0, ""
     if card_type in ("Pilot", "Command") and "Pilot" in effect_raw:
         pilot_ap, pilot_hp, pilot_name = parse_pilot_stats(effect_raw)
     if card_type == "Pilot":
-        m = PILOT_AP_RE.search(clean_html(effect_raw)); pilot_ap = safe_int(m.group(1)) if m else pilot_ap
-        m = PILOT_HP_RE.search(clean_html(effect_raw)); pilot_hp = safe_int(m.group(1)) if m else pilot_hp
+        text = clean_html(effect_raw)
+        m = PILOT_AP_RE.search(text); pilot_ap = safe_int(m.group(1)) if m else pilot_ap
+        m = PILOT_HP_RE.search(text); pilot_hp = safe_int(m.group(1)) if m else pilot_hp
 
     return {
         "card_number":     num,
         "card_name":       name,
         "card_type":       card_type,
         "colors":          colors,
-        "lv":              safe_int(raw.get("lv",  0)),
-        "cost":            safe_int(raw.get("cost",0)),
-        "ap":              safe_int(raw.get("ap",  0)),
-        "hp":              safe_int(raw.get("hp",  0)),
+        "lv":              safe_int(raw.get("lv",   0)),
+        "cost":            safe_int(raw.get("cost", 0)),
+        "ap":              safe_int(raw.get("ap",   0)),
+        "hp":              safe_int(raw.get("hp",   0)),
         "traits":          traits,
         "effects":         effects,
         "link_conditions": link_str,
@@ -506,6 +431,10 @@ def transform(raw):
         "effect_raw":      clean_html(effect_raw),
     }
 
+
+# ─────────────────────────────────────────────
+#  CSV OUTPUT
+# ─────────────────────────────────────────────
 
 def write_csv(rows, path):
     with open(path, "w", newline="", encoding="utf-8") as f:
@@ -523,54 +452,86 @@ def main():
     global CLICK_DELAY
 
     p = argparse.ArgumentParser(
-        description="Scrape Gundam Card Game from gundam-gcg.com using Selenium."
+        description="Scrape Gundam Card Game data using Playwright (no Chrome install needed)."
     )
-    p.add_argument("--out",      default="gundam_cards.csv")
-    p.add_argument("--sets",     nargs="*", metavar="SET")
-    p.add_argument("--browser",  default="chrome", choices=["chrome","firefox"])
-    p.add_argument("--headless", default="true",   choices=["true","false"])
-    p.add_argument("--delay",    type=float, default=CLICK_DELAY)
-    p.add_argument("--preview",  action="store_true")
+    p.add_argument("--out",     default="gundam_cards.csv",
+                   help="Output CSV file (default: gundam_cards.csv)")
+    p.add_argument("--sets",    nargs="*", metavar="SET",
+                   help=f"Sets to scrape, e.g. --sets GD01 ST01. Default: all. "
+                        f"Known: {', '.join(ALL_SET_CODES)}")
+    p.add_argument("--headed",  action="store_true",
+                   help="Show browser window (local machines only, not Codespaces)")
+    p.add_argument("--delay",   type=float, default=CLICK_DELAY,
+                   help=f"Seconds between card clicks (default: {CLICK_DELAY})")
+    p.add_argument("--preview", action="store_true",
+                   help="Print first 3 cards as JSON and exit without saving")
     args = p.parse_args()
 
     CLICK_DELAY = args.delay
-    headless    = args.headless.lower() == "true"
 
     targets = args.sets or ALL_SET_CODES
+    targets = [s.upper() for s in targets]
+    unknown = [s for s in targets if s not in SET_PACKAGE_IDS]
+    if unknown:
+        print(f"[WARN] Unknown sets (will skip): {unknown}")
     targets = [s for s in targets if s in SET_PACKAGE_IDS]
     if not targets:
-        sys.exit("No valid set codes. Known sets: " + ", ".join(ALL_SET_CODES))
+        sys.exit("No valid sets. Known: " + ", ".join(ALL_SET_CODES))
 
     print("=" * 60)
-    print("  Gundam Card Game Scraper  (Selenium)")
-    print(f"  Browser  : {args.browser} (headless={headless})")
-    print(f"  Sets     : {', '.join(targets)}")
-    print(f"  Output   : {args.out}")
+    print("  Gundam Card Game Scraper  v3  (Playwright)")
+    print(f"  Sets   : {', '.join(targets)}")
+    print(f"  Output : {args.out}")
+    print(f"  Headed : {args.headed}")
     print("=" * 60)
 
-    driver = make_driver(args.browser, headless)
     all_raw = []
-    try:
+
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch(headless=not args.headed)
+        context = browser.new_context(
+            locale="en-US",
+            user_agent=(
+                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            )
+        )
+        page = context.new_page()
+
         for set_code in targets:
-            raw = scrape_set(driver, set_code, SET_PACKAGE_IDS[set_code])
+            raw = scrape_set(page, set_code, SET_PACKAGE_IDS[set_code])
             all_raw.extend(raw)
-    finally:
-        driver.quit()
+            print(f"  → {len(raw)} cards from {set_code} (running total: {len(all_raw)})")
+
+        browser.close()
+
+    if not all_raw:
+        print("\n⚠️  No cards were extracted. The site structure may have changed.")
+        print("   Try running with --headed to watch what the browser sees (local only).")
+        sys.exit(1)
 
     if args.preview:
+        print("\n── Preview (first 3 raw cards) ──")
         for r in all_raw[:3]:
             print(json.dumps(r, indent=2, ensure_ascii=False))
         return
 
+    print(f"\nTransforming {len(all_raw)} raw cards…")
     rows = [t for raw in all_raw if (t := transform(raw))]
     rows.sort(key=lambda r: r["card_number"])
+    skipped = len(all_raw) - len(rows)
+    print(f"Transformed {len(rows)} cards ({skipped} skipped — no number/name).")
+
     write_csv(rows, Path(args.out))
 
     from collections import Counter
     print("\n── Summary ──")
     print("  Card types :", dict(Counter(r["card_type"]  for r in rows)))
-    print("  Colors     :", dict(Counter(c for r in rows for c in r["colors"].split("/") if c)))
-    print("\nImport the CSV in the app → Deck Builder → Upload CSV")
+    print("  Colors     :", dict(Counter(
+        c for r in rows for c in r["colors"].split("/") if c
+    )))
+    print(f"\n✅  Drop '{args.out}' next to app.py and relaunch the simulator.")
+    print("   Or upload it via: Deck Builder tab → Upload CSV")
 
 
 if __name__ == "__main__":
